@@ -1,0 +1,146 @@
+* {
+  font-family: 'Lato'; 
+}
+
+body,
+.mini-navbar .nav-second-level
+.sidebar-container ul.nav-tabs li a{background-color: #808183 !important}
+
+.modal-header{font-size: 20px !important; padding: 15px !important}
+
+.main-container{width: 90%}
+.header{font-size: 20px; font-weight: bold}
+
+.nav-header{padding: 0; background: none;}
+
+.navbar-static-top{background-color: #FFF; min-height: 50px}
+.navbar-top-links{padding-top: 15px;}
+.navbar-top-links>li{margin:11px 30px;}
+.navbar-top-links>li>a{padding: 0;}
+
+.navbar-minimalize{margin: 16px !important}
+.navbar-minimalized{margin: 6px !important}
+body.mini-navbar .logo-element{min-height: 65px}
+
+.header-border-bottom{border-bottom: 2px solid #222222 !important}
+
+#side-menu > li{border-bottom: solid 2px #B3B3B3}
+#side-menu > li > a{color: #FFF !important; padding: 15px 30px}
+
+i.fa-bars{font-size: 30px;}
+
+.bg-gray{background-color: #CCCCCC}
+
+.no-margin{margin: 0 !important}
+
+.navbar-minimalize{margin: 15px 20px}
+
+
+
+.login-container{width: 50%; margin: 0 auto}
+
+.border-bottom-content{border-bottom: solid 2px #B3B3B3}
+.border-top-content{border-top: solid 2px #B3B3B3}
+
+.titulos-interna{height: 62px; padding-top: 20px; font-size: 20px; font-weight: bold;}
+
+.lista-acoes>li{padding: 2% 7%; font-size: 20px;}
+
+.vertical-timeline-icon{padding-top: 12px; width:50px; height: 50px; font-size: 14px}
+
+.overflow{overflow: auto}
+
+.min-height{min-height: 400px}
+
+.lista-acoes>li{padding: 2% 5%;}
+
+.lista-servicos{padding: 15px; margin-bottom: 15px; background-color: #F3F3F4;}
+.lista-servicos.active{right: -15px; background-color: #FFF}
+.lista-servicos:hover{background-color: #DCDCDC}
+
+.dados-cliente{padding-bottom: 20px !important; font-size: 14px}
+
+table.no-border tr th, table.no-border tr td{border: 0;}
+
+/* Modal */
+.inmodal .modal-body {
+  background: #FFF !important;
+}
+
+/* Autocomplete */
+.ui-autocomplete {
+	position: absolute;
+	z-index: 2150000000 !important;
+	cursor: default;
+	border: 2px solid #ccc;
+	padding: 5px 0;
+	border-radius: 2px;
+}
+
+/* Padding */
+.no-padding-bottom{padding-bottom: 0}
+
+/* Tables */
+
+table th, table td{text-align: center}
+
+tr[data-href]:hover{cursor: pointer}
+
+/* Alert */
+.alert{margin-bottom: 0 !important}
+
+/* Forms */
+.width80{width: 80% !important}
+.form-control.date{width:10%; float: left}
+select[name*="year"]{margin-right: 15px}
+.status-servico, .ibox-tools a{margin-right: 10px}
+.ibox-tools a{margin-top: 3px}
+select{
+  background-color: #FFFFFF;
+  background-image: none;
+  border: 1px solid #e5e6e7;
+  border-radius: 1px;
+  color: inherit;
+  display: block;
+  padding: 6px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  font-size: 12px;
+}
+
+/* Badges */
+.badge-warning {
+  background-color: #f8ac59 !important;
+  color: #FFFFFF;
+}
+
+.badge-danger {
+  background-color: #ed5565;
+  color: #FFFFFF;
+}
+
+/* Histórico */
+.vertical-timeline-content{background-color: #F3F8F4 !important}
+
+/* List Group */
+table.no-border tr td a{margin-left: 8px}
+
+
+/* FONT DO LOGO */
+.shojumaru{
+  font-family:Shojumaru,cursive,Arial,serif !important;
+}
+.logo-navbar{
+  font-size: 20px;
+  text-shadow: #fff 1px 2px 5px;
+  font-weight: bold;
+  color: #eff2f5;
+  background-color: #808183;
+}
+
+/* Cabeçalhos das páginas */
+
+.page-heading{padding: 10px;}
+.page-heading h3{color:#eff2f5; margin-left:50px;}
+.lista-servidores{padding: 20px;}
+.borda-servidores{border: solid 3px #e7eaec;}
+.bg-color-title-pagina{background-color:#293846;}
