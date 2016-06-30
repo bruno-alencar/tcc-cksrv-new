@@ -4,159 +4,33 @@
 	</div>
 </div>
 
-
 <div class="row lista-servidores">
-	<div class="col-lg-4 lista-servidores">
-		<div class="ibox float-e-margins borda-servidores">
-			<div class="ibox-title">
-				<h5>Servidor</h5>
-				<div class="ibox-tools">
-					<a class="collapse-link">
-                    	<i class="fa fa-chevron-up"></i>
-                    </a>
-                    <!-- <?php echo $this->Html->link('', array('controller' => 'clientes', 'action' => 'add_contato', $this->request->data['Cliente']['id']), array('title' => 'Adicionar Contato', 'onclick' => 'javascript:void(exibeModal(this))', 'class' => 'fa fa-plus showmodal')); ?> -->
-				</div>
-			</div>
-			<div class="ibox-content">
+	<?php
+		foreach ($servidores as $s):
+			echo '<div class="col-lg-4 lista-servidores">';
+				echo '<div class="ibox float-e-margins borda-servidores">';
+					echo '<div class="ibox-title">';
 
-			</div>
-		</div>
-	</div>
+						$server_online = shell_exec('/Library/WebServer/Documents/cksrv/shell/ping.sh '.$s['Servidor']['ip']);
+					
+						$status_servidor = '#2eb82e'; // Verde
+						if($server_online == 0)
+							$status_servidor = '#cc0000'; // Vermelho
 
-	<div class="col-lg-4 lista-servidores">
-		<div class="ibox float-e-margins borda-servidores">
-			<div class="ibox-title">
-				<h5>Servidor</h5>
-				<div class="ibox-tools">
-					<a class="collapse-link">
-                    	<i class="fa fa-chevron-up"></i>
-                    </a>
-                    <!-- <?php echo $this->Html->link('', array('controller' => 'clientes', 'action' => 'add_contato', $this->request->data['Cliente']['id']), array('title' => 'Adicionar Contato', 'onclick' => 'javascript:void(exibeModal(this))', 'class' => 'fa fa-plus showmodal')); ?> -->
-				</div>
-			</div>
-			<div class="ibox-content">
+						echo '<h5 style="color:'.$status_servidor.'"><i class="fa fa-linux"></i> - '.$s['Servidor']['host'].' - '.$s['Servidor']['ip'].'</h5>';
+						echo '<div class="ibox-tools">';
+							echo '<a class="collapse-link">';
+								echo '<i class="fa fa-chevron-up"></i>';
+							echo '</a>';
+						echo '</div>';
+					echo '</div>';
+					echo '<div class="ibox-content">';
+						
+						echo '';
 
-			</div>
-		</div>
-	</div>
-
-	<div class="col-lg-4 lista-servidores">
-		<div class="ibox float-e-margins borda-servidores">
-			<div class="ibox-title">
-				<h5>Servidor</h5>
-				<div class="ibox-tools">
-					<a class="collapse-link">
-                    	<i class="fa fa-chevron-up"></i>
-                    </a>
-                    <!-- <?php echo $this->Html->link('', array('controller' => 'clientes', 'action' => 'add_contato', $this->request->data['Cliente']['id']), array('title' => 'Adicionar Contato', 'onclick' => 'javascript:void(exibeModal(this))', 'class' => 'fa fa-plus showmodal')); ?> -->
-				</div>
-			</div>
-			<div class="ibox-content">
-
-			</div>
-		</div>
-	</div>
-
-	<div class="col-lg-4 lista-servidores">
-		<div class="ibox float-e-margins borda-servidores">
-			<div class="ibox-title">
-				<h5>Servidor</h5>
-				<div class="ibox-tools">
-					<a class="collapse-link">
-                    	<i class="fa fa-chevron-up"></i>
-                    </a>
-                    <!-- <?php echo $this->Html->link('', array('controller' => 'clientes', 'action' => 'add_contato', $this->request->data['Cliente']['id']), array('title' => 'Adicionar Contato', 'onclick' => 'javascript:void(exibeModal(this))', 'class' => 'fa fa-plus showmodal')); ?> -->
-				</div>
-			</div>
-			<div class="ibox-content">
-
-			</div>
-		</div>
-	</div>
-
-	<div class="col-lg-4 lista-servidores">
-		<div class="ibox float-e-margins borda-servidores">
-			<div class="ibox-title">
-				<h5>Servidor</h5>
-				<div class="ibox-tools">
-					<a class="collapse-link">
-                    	<i class="fa fa-chevron-up"></i>
-                    </a>
-                    <!-- <?php echo $this->Html->link('', array('controller' => 'clientes', 'action' => 'add_contato', $this->request->data['Cliente']['id']), array('title' => 'Adicionar Contato', 'onclick' => 'javascript:void(exibeModal(this))', 'class' => 'fa fa-plus showmodal')); ?> -->
-				</div>
-			</div>
-			<div class="ibox-content">
-
-			</div>
-		</div>
-	</div>
-
-	<div class="col-lg-4 lista-servidores">
-		<div class="ibox float-e-margins borda-servidores">
-			<div class="ibox-title">
-				<h5>Servidor</h5>
-				<div class="ibox-tools">
-					<a class="collapse-link">
-                    	<i class="fa fa-chevron-up"></i>
-                    </a>
-                    <!-- <?php echo $this->Html->link('', array('controller' => 'clientes', 'action' => 'add_contato', $this->request->data['Cliente']['id']), array('title' => 'Adicionar Contato', 'onclick' => 'javascript:void(exibeModal(this))', 'class' => 'fa fa-plus showmodal')); ?> -->
-				</div>
-			</div>
-			<div class="ibox-content">
-
-			</div>
-		</div>
-	</div>
-
-	<div class="col-lg-4 lista-servidores">
-		<div class="ibox float-e-margins borda-servidores">
-			<div class="ibox-title">
-				<h5>Servidor</h5>
-				<div class="ibox-tools">
-					<a class="collapse-link">
-                    	<i class="fa fa-chevron-up"></i>
-                    </a>
-                    <!-- <?php echo $this->Html->link('', array('controller' => 'clientes', 'action' => 'add_contato', $this->request->data['Cliente']['id']), array('title' => 'Adicionar Contato', 'onclick' => 'javascript:void(exibeModal(this))', 'class' => 'fa fa-plus showmodal')); ?> -->
-				</div>
-			</div>
-			<div class="ibox-content">
-
-			</div>
-		</div>
-	</div>
-
-	<div class="col-lg-4 lista-servidores">
-		<div class="ibox float-e-margins borda-servidores">
-			<div class="ibox-title">
-				<h5>Servidor</h5>
-				<div class="ibox-tools">
-					<a class="collapse-link">
-                    	<i class="fa fa-chevron-up"></i>
-                    </a>
-                    <!-- <?php echo $this->Html->link('', array('controller' => 'clientes', 'action' => 'add_contato', $this->request->data['Cliente']['id']), array('title' => 'Adicionar Contato', 'onclick' => 'javascript:void(exibeModal(this))', 'class' => 'fa fa-plus showmodal')); ?> -->
-				</div>
-			</div>
-			<div class="ibox-content">
-
-			</div>
-		</div>
-	</div>
-
-	<div class="col-lg-4 lista-servidores">
-		<div class="ibox float-e-margins borda-servidores">
-			<div class="ibox-title">
-				<h5>Servidor</h5>
-				<div class="ibox-tools">
-					<a class="collapse-link">
-                    	<i class="fa fa-chevron-up"></i>
-                    </a>
-                    <!-- <?php echo $this->Html->link('', array('controller' => 'clientes', 'action' => 'add_contato', $this->request->data['Cliente']['id']), array('title' => 'Adicionar Contato', 'onclick' => 'javascript:void(exibeModal(this))', 'class' => 'fa fa-plus showmodal')); ?> -->
-				</div>
-			</div>
-			<div class="ibox-content">
-
-			</div>
-		</div>
-	</div>
-	
+					echo '</div>';
+				echo '</div>';
+			echo '</div>';
+		endforeach;
+	?>	
 </div>

@@ -401,7 +401,7 @@ Inflector::rules('singular', array(
 		'/^(.*)(ais)$/i' => '\1al',   
 	),
 	'irregular' => array(
-		'usuario_perfis' => 'usuario_perfil',
+		'servidores' => 'servidor',
 	),
 	'uninflected' => array('status')
 ));
@@ -417,7 +417,7 @@ Inflector::rules('plural', array(
 		'/^(.*)al$/i' => '\1ais',
 	),
 	'irregular' => array(
-		'usuario_perfil' => 'usuario_perfis'
+		'servidor' => 'servidores'
 	),
 	'uninflected' => array('status')
 ));

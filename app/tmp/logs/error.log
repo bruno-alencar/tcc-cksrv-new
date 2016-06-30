@@ -19700,3 +19700,2766 @@ Request URL: /alfa_ck/css/cake.css
 Stack Trace:
 #0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2016-06-28 16:32:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-28 16:34:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-28 16:34:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:02:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:02:08 Error: [MissingActionException] Action UsuariosController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsuariosController',
+  'action' => 'index',
+)
+Request URL: /alfa_ck/usuarios
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsuariosController), Object(CakeRequest))
+#2 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-06-29 09:02:08 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:02:28 Error: [MissingActionException] Action UsuariosController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsuariosController',
+  'action' => 'index',
+)
+Request URL: /alfa_ck/usuarios
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsuariosController), Object(CakeRequest))
+#2 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-06-29 09:02:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:02:30 Error: [MissingTableException] Table usuario_perfis for model UsuarioPerfil was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'usuario_perfis',
+  'class' => 'UsuarioPerfil',
+  'ds' => 'default',
+)
+Request URL: /alfa_ck/admin/usuarios
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Model.php(3653): Model->setSource('usuario_perfis')
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Datasource/DboSource.php(2529): Model->schema()
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Datasource/DboSource.php(1753): DboSource->fields(Object(AppModel), 'UsuarioPerfil', '')
+#4 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Datasource/DboSource.php(1100): DboSource->generateAssociationQuery(Object(Usuario), Object(AppModel), 'belongsTo', 'UsuarioPerfil', Array, Array, false)
+#5 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Model.php(3031): DboSource->read(Object(Usuario), Array)
+#6 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Model.php(3003): Model->_readDataSource('all', Array)
+#7 /Library/WebServer/Documents/alfa_ck/app/Controller/UsuariosController.php(34): Model->find('all')
+#8 [internal function]: UsuariosController->admin_index()
+#9 /Library/WebServer/Documents/alfa_ck/lib/Cake/Controller/Controller.php(491): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#10 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsuariosController), Object(CakeRequest))
+#12 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2016-06-29 09:02:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:03:18 Error: [MissingTableException] Table usuario_perfis for model UsuarioPerfil was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'usuario_perfis',
+  'class' => 'UsuarioPerfil',
+  'ds' => 'default',
+)
+Request URL: /alfa_ck/admin/usuarios
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Model.php(3653): Model->setSource('usuario_perfis')
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Datasource/DboSource.php(2529): Model->schema()
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Datasource/DboSource.php(1753): DboSource->fields(Object(AppModel), 'UsuarioPerfil', '')
+#4 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Datasource/DboSource.php(1100): DboSource->generateAssociationQuery(Object(Usuario), Object(AppModel), 'belongsTo', 'UsuarioPerfil', Array, Array, false)
+#5 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Model.php(3031): DboSource->read(Object(Usuario), Array)
+#6 /Library/WebServer/Documents/alfa_ck/lib/Cake/Model/Model.php(3003): Model->_readDataSource('all', Array)
+#7 /Library/WebServer/Documents/alfa_ck/app/Controller/UsuariosController.php(34): Model->find('all')
+#8 [internal function]: UsuariosController->admin_index()
+#9 /Library/WebServer/Documents/alfa_ck/lib/Cake/Controller/Controller.php(491): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#10 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsuariosController), Object(CakeRequest))
+#12 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2016-06-29 09:03:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:04:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:05:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:07:45 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:08:27 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:10:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:10:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:10:53 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:11:11 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Library/WebServer/Documents/alfa_ck/app/Controller/UsuariosController.php, line 40]
+2016-06-29 09:11:11 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /alfa_ck/admin/usuarios/add_usuario
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Library/WebSer...', 40)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Library/WebSer...', 40, Array)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Library/WebSer...', 40, Array)
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-29 09:11:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:13:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:13:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:14:09 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:14:45 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:15:16 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:15:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:15:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:16:02 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:16:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:17:16 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:17:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:17:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:18:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:18:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:18:45 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:19:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:19:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:19:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:20:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:20:20 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:20:21 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:20:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:20:34 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:20:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:20:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:22:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:22:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:22:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:22:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:22:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:22:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:22:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:22:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:23:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:23:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:23:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:23:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:24:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:25:02 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:25:09 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:28:20 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:28:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:29:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:29:47 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:30:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:31:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:31:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:31:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:32:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:32:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:32:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:32:40 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:32:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:33:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:33:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:56:24 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 09:56:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 10:09:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 10:09:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:08:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:08:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:13:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:19:23 Error: [MissingActionException] Action ServidoresController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'ServidoresController',
+  'action' => 'admin_index',
+)
+Request URL: /alfa_ck/admin/servidores
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(ServidoresController), Object(CakeRequest))
+#2 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-06-29 11:19:23 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:20:25 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Library/WebServer/Documents/alfa_ck/app/Controller/ServidoresController.php, line 9]
+2016-06-29 11:20:25 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /alfa_ck/admin/servidores
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Library/WebSer...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Library/WebSer...', 9, Array)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Library/WebSer...', 9, Array)
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-29 11:20:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:21:28 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Library/WebServer/Documents/alfa_ck/app/Controller/ServidoresController.php, line 9]
+2016-06-29 11:21:28 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /alfa_ck/admin/servidores
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Library/WebSer...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Library/WebSer...', 9, Array)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Library/WebSer...', 9, Array)
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-29 11:21:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:25:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:25:55 Error: Fatal Error (4): parse error in [/Library/WebServer/Documents/alfa_ck/app/Controller/ServidoresController.php, line 9]
+2016-06-29 11:25:55 Error: [FatalErrorException] parse error
+Request URL: /alfa_ck/admin/servidores
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'parse error', '/Library/WebSer...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error', '/Library/WebSer...', 9, Array)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 4, 'parse error', '/Library/WebSer...', 9, Array)
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-29 11:25:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:25:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:26:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:26:12 Error: Fatal Error (1): Call to undefined method ServidoresController::model() in [/Library/WebServer/Documents/alfa_ck/app/Controller/ServidoresController.php, line 9]
+2016-06-29 11:26:12 Error: [FatalErrorException] Call to undefined method ServidoresController::model()
+Request URL: /alfa_ck/admin/servidores
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Library/WebSer...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Library/WebSer...', 9, Array)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Library/WebSer...', 9, Array)
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-29 11:26:13 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:26:54 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Library/WebServer/Documents/alfa_ck/app/Controller/ServidoresController.php, line 9]
+2016-06-29 11:26:54 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /alfa_ck/admin/servidores
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Library/WebSer...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Library/WebSer...', 9, Array)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Library/WebSer...', 9, Array)
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-29 11:26:54 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:26:56 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Library/WebServer/Documents/alfa_ck/app/Controller/ServidoresController.php, line 9]
+2016-06-29 11:26:56 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /alfa_ck/admin/servidores
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Library/WebSer...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Library/WebSer...', 9, Array)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Library/WebSer...', 9, Array)
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-29 11:26:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:27:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:28:36 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Library/WebServer/Documents/alfa_ck/app/Controller/ServidoresController.php, line 9]
+2016-06-29 11:28:36 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /alfa_ck/admin/servidores
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Library/WebSer...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Library/WebSer...', 9, Array)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Library/WebSer...', 9, Array)
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-29 11:28:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:28:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:35:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:35:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:36:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:36:09 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:36:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:36:13 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:36:45 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:36:47 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:40:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:41:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:41:45 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:42:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:42:54 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:43:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:48:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:48:16 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:48:23 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:48:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:48:57 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:49:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:49:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:49:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:49:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:49:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:50:16 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:50:24 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:50:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:50:47 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:50:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:51:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:51:04 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:51:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:51:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:51:54 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:51:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:52:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:52:27 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:52:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:52:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:52:45 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:52:52 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:52:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:53:04 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:53:32 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:53:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:54:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:54:52 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:54:55 Error: [MissingActionException] Action UsuariosController::admin_altera_status_servidor_ativo_inativo() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsuariosController',
+  'action' => 'admin_altera_status_servidor_ativo_inativo',
+)
+Request URL: /alfa_ck/admin/usuarios/altera_status_servidor_ativo_inativo/4
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsuariosController), Object(CakeRequest))
+#2 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-06-29 11:54:57 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:55:12 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:55:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 11:55:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-29 12:27:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 07:56:32 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 07:56:35 Error: [MissingActionException] Action UsuariosController::admin_login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsuariosController',
+  'action' => 'admin_login',
+)
+Request URL: /alfa_ck/admin/usuarios/login
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsuariosController), Object(CakeRequest))
+#2 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-06-30 07:56:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 07:56:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 07:57:22 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 07:57:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 07:58:23 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:01:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:23:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:23:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:23:08 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:23:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:23:32 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:24:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:25:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:25:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:26:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:26:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:26:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:26:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:26:40 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:26:40 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:33:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:35:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:35:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:35:16 Error: [MissingViewException] View file "Servidores/admin_view.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Servidores/admin_view.ctp',
+)
+Request URL: /alfa_ck/admin/servidores/view/3
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Controller/Controller.php(963): View->render(NULL, NULL)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(ServidoresController), Object(CakeRequest))
+#4 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-06-30 08:35:16 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:35:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:36:56 Error: [MissingViewException] View file "Servidores/admin_view.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Servidores/admin_view.ctp',
+)
+Request URL: /alfa_ck/admin/servidores/view/3
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Controller/Controller.php(963): View->render(NULL, NULL)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(ServidoresController), Object(CakeRequest))
+#4 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-06-30 08:36:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:36:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:36:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:36:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:37:00 Error: [MissingViewException] View file "Servidores/admin_view.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Servidores/admin_view.ctp',
+)
+Request URL: /alfa_ck/admin/servidores/view/1
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Controller/Controller.php(963): View->render(NULL, NULL)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(ServidoresController), Object(CakeRequest))
+#4 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-06-30 08:37:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:37:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:37:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:37:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:38:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:38:01 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:38:02 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:38:02 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:38:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:38:12 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:38:13 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 08:38:14 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:16:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:19:20 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:19:21 Error: [MissingViewException] View file "Servidores/admin_view.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Servidores/admin_view.ctp',
+)
+Request URL: /alfa_ck/admin/servidores/view/3
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Controller/Controller.php(963): View->render(NULL, NULL)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(ServidoresController), Object(CakeRequest))
+#4 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-06-30 10:19:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:19:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:20:23 Error: [MissingViewException] View file "Servidores/admin_add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Servidores/admin_add.ctp',
+)
+Request URL: /alfa_ck/admin/servidores/add
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Controller/Controller.php(963): View->render(NULL, NULL)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(ServidoresController), Object(CakeRequest))
+#4 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-06-30 10:20:23 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:21:27 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:22:02 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:22:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:27:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:27:34 Error: [MissingActionException] Action UsuariosController::admin_edit_usuario() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsuariosController',
+  'action' => 'admin_edit_usuario',
+)
+Request URL: /alfa_ck/admin/usuarios/edit_usuario/13
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Library/WebServer/Documents/alfa_ck/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsuariosController), Object(CakeRequest))
+#2 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-06-30 10:27:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:28:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:28:12 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:28:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:28:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:32:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:33:40 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:34:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:34:32 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:34:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:34:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:35:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:35:13 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:36:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:38:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:38:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:38:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:38:49 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:39:23 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:40:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:40:22 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:40:40 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:40:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:42:13 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:42:32 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:42:40 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:42:49 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:42:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:43:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:43:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:43:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:43:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:43:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:44:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 10:44:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/js/metisMenu.js.map
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:08:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:09:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:09:02 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:09:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:09:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:09:08 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:09:09 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:09:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:18:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:19:31 Error: Fatal Error (1): Class 'Status' not found in [/Library/WebServer/Documents/alfa_ck/app/Controller/MonitoramentoController.php, line 11]
+2016-06-30 11:19:31 Error: [FatalErrorException] Class 'Status' not found
+Request URL: /alfa_ck/
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'Status' ...', '/Library/WebSer...', 11)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Status' ...', '/Library/WebSer...', 11, Array)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 1, 'Class 'Status' ...', '/Library/WebSer...', 11, Array)
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-30 11:19:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:20:57 Error: Fatal Error (1): Class 'Status' not found in [/Library/WebServer/Documents/alfa_ck/app/Controller/MonitoramentoController.php, line 11]
+2016-06-30 11:20:57 Error: [FatalErrorException] Class 'Status' not found
+Request URL: /alfa_ck/
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'Status' ...', '/Library/WebSer...', 11)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Status' ...', '/Library/WebSer...', 11, Array)
+#2 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 1, 'Class 'Status' ...', '/Library/WebSer...', 11, Array)
+#3 /Library/WebServer/Documents/alfa_ck/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-30 11:20:57 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:21:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:22:47 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:23:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:23:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:29:49 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:30:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:32:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:33:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:36:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:36:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:40:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:40:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:40:45 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:40:52 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:42:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:42:22 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:42:27 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:42:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:42:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:55:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:55:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:55:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 11:55:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 15:18:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 15:22:40 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 15:59:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 16:01:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 16:01:45 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 16:01:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 16:05:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 16:05:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 16:05:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 16:05:49 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 16:35:09 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 16:35:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 16:35:13 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-06-30 16:35:16 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /alfa_ck/css/cake.css
+Stack Trace:
+#0 /Library/WebServer/Documents/alfa_ck/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

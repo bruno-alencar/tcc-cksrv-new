@@ -12,8 +12,8 @@
 							<br>
 							 <?php echo $this->Form->create('Usuario', array('url' => array('controller' => 'usuarios', 'action' => 'login'))); ?>
 							  <div class="form-group">
-							    <label>Email</label>
-							    <input name="data[Usuario][email]" type="email" class="form-control" placeholder="Email">
+							    <label>Login</label>
+							    <input name="data[Usuario][login]" type="login" class="form-control" placeholder="Login">
 							  </div>
 							  <div class="form-group">
 							    <label>Senha</label>

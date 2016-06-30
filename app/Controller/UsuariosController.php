@@ -3,11 +3,9 @@
 class UsuariosController extends AppController{
 
 	public function beforeFilter() {       
-				$this->loadModel('Sexo');
-				$this->loadModel('UsuarioPerfil');
-				$this->loadModel('UsuarioGrupo');
-				$this->loadModel('UsuarioCargo');
-		}
+		$this->loadModel('Sexo');
+		$this->loadModel('Perfil');
+	}
 
 	public function login(){
 		// $user = AuthComponent::user();
@@ -37,11 +35,9 @@ class UsuariosController extends AppController{
 	}
 
 
-	public function admin_add_usuario(){
+	public function admin_add(){
 		$sexos = $this->Sexo->find('list');
-		$usuarioPerfis = $this->UsuarioPerfil->find('list');
-		$usuarioGrupos = $this->UsuarioGrupo->find('list');
-		$usuarioCargos = $this->UsuarioCargo->find('list');
+		$perfils = $this->Perfil->find('list');
 
 		if ($this->request->is('post') && $this->request->data) {
 			if ($this->Usuario->save($this->request->data)) {
@@ -52,15 +48,13 @@ class UsuariosController extends AppController{
 			}
 		}
 
-		$this->set(compact('sexos', 'usuarioPerfis', 'usuarioGrupos', 'usuarioCargos')); 
+		$this->set(compact('sexos', 'perfils')); 
 	}
 
 
-	public function admin_edit_usuario($usuario_id){
+	public function admin_edit($usuario_id){
 		$sexos = $this->Sexo->find('list');
-		$usuarioPerfis = $this->UsuarioPerfil->find('list');
-		$usuarioGrupos = $this->UsuarioGrupo->find('list');
-		$usuarioCargos = $this->UsuarioCargo->find('list');
+		$perfils = $this->Perfil->find('list');
 
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Usuario->save($this->request->data)) {
@@ -75,8 +69,8 @@ class UsuariosController extends AppController{
 		$this->Usuario->id = $usuario_id;
 		$this->request->data = $this->Usuario->read();
 
-		$this->set(compact('sexos', 'usuarioPerfis', 'usuarioGrupos', 'usuarioCargos')); 
-		$this->render('admin_add_usuario');
+		$this->set(compact('sexos', 'perfils')); 
+		$this->render('admin_add');
 	}
 
 	public function admin_altera_status_usuario_ativo_inativo($usuario_id){
@@ -85,7 +79,7 @@ class UsuariosController extends AppController{
 		$this->Usuario->id = $usuario_id;
 		$usuario = $this->Usuario->read();
 
-		$ativar_desativar = $usuario['Usuario']['status_id'] == 1 ? 2 : 1;
+		$ativar_desativar = $usuario['Usuario']['status_id'] == 1 ? 0 : 1;
 		$this->Usuario->saveField('status_id', $ativar_desativar);
 	}
 
