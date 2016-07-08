@@ -11,7 +11,7 @@
 				echo '<div class="ibox float-e-margins borda-servidores">';
 					echo '<div class="ibox-title">';
 
-						$server_online = shell_exec('/Library/WebServer/Documents/cksrv/shell/ping.sh '.$s['Servidor']['ip']);
+						$server_online = shell_exec(WWW_ROOT.'shell/ping.sh '.$s['Servidor']['ip']);
 					
 						$status_servidor = '#2eb82e'; // Verde
 						if($server_online == 0)

@@ -69,7 +69,8 @@
 						</div>
 						<ul class="pull-right navbar-top-links col-md-2">
 							
-							<?php if(AuthComponent::user('id')): ?>
+							<?php 
+							if(AuthComponent::user('id')): ?>
 								<li class="pull-right"><?php echo $this->Html->link('<i class="fa fa-sign-out"></i> Logout', array('admin' => false, 'controller' => 'usuarios', 'action' => 'logout'), array('escape' => false)) ?></li>
 							<?php endif; ?>
 						</ul>
