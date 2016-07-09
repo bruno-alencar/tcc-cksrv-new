@@ -7,7 +7,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => '127.0.0.1',
 		'login' => 'root',
-		'password' => '4334N@k0N',
+		'password' => 'eduardo',
 		'database' => 'cksrv',
 		'prefix' => '',
 		'encoding' => 'utf8',
