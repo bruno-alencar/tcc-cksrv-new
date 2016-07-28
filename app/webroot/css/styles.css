@@ -144,3 +144,6 @@ table.no-border tr td a{margin-left: 8px}
 .lista-servidores{padding: 20px;}
 .borda-servidores{border: solid 3px #e7eaec;}
 .bg-color-title-pagina{background-color:#293846; margin-bottom: 20px;}
+
+.error-message{color:red; clear:both; padding-left: 130px; font-size: 15px;}
+.form-error{border-color: red;}

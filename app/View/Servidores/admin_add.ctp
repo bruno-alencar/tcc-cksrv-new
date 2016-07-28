@@ -22,10 +22,16 @@
 			<?php echo $this->Form->input('ip', array('class' => 'col-sm-9', 'placeholder' => 'Insira o ip', 'label' => array('text' => 'IP:', 'class' => 'col-sm-2')));?>
 		</div>
 
-		<div class="col-sm-12">
-			<?php echo $this->Form->input('usuario', array('class' => 'col-sm-9', 'placeholder' => 'Insira o usuário', 'label' => array('text' => 'Usuário:', 'class' => 'col-sm-2')));?>
-			<?php echo $this->Form->input('senha', array('class' => 'col-sm-5', 'type' => 'password', 'placeholder' => 'Insira a senha', 'label' => array('text' => 'Senha:', 'class' => 'col-sm-2')));?>
+
+		<div class="col-sm-12" style="margin-top:30px;">
+			<?php echo $this->Form->input('usuario', array('class' => 'col-sm-9', 'placeholder' => 'Insira o usuário', 'id' => 'nome', 'label' => array('text' => 'Usuário:', 'class' => 'col-sm-2')));?>
+			<?php echo $this->Form->input('senha', array('class' => 'col-sm-5', 'type' => 'password', 'placeholder' => 'Insira a senha', 'id' => 'senha', 'label' => array('text' => 'Senha:', 'class' => 'col-sm-2')));?>
 		</div>
+
+		<div class="col-sm-12 text-center" style="margin-bottom:30px;">
+			<?php echo $this->Html->link('<i class="fa fa-link"></i> <span class="nav-label"> Testar Conexão</span>', 'javascript:void(testar_conexao())', array('escape' => false, 'class' => 'btn btn-primary')) ?> 
+		</div>
+				
 		
 		<div class="col-sm-12">
 			<?php echo $this->Form->input('detalhes_so', array('class' => 'col-sm-9', 'placeholder' => 'Insira o Sistema Operacional', 'label' => array('text' => 'Sistema Operacional:', 'class' => 'col-sm-2')));?>

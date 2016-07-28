@@ -35,7 +35,7 @@
 					<ul class="nav metismenu" id="side-menu" style="display: block;">
 						<li class="nav-header">
 							<div class="text-center profile-element" style="padding: 15px;"> 
-								<?php echo $this->Html->link('Check Server', array('admin' => false, 'controller' => 'monitoramento', 'action' => 'index'), array('escape' => false, 'class' => 'logo-navbar shojumaru', 'style' => 'color: #eff2f5;')) ?> 
+								<?php echo $this->Html->link('C-h-e-c-k Server', array('admin' => false, 'controller' => 'monitoramento', 'action' => 'index'), array('escape' => false, 'class' => 'logo-navbar shojumaru', 'style' => 'color: #eff2f5;')) ?> 
 							</div>
 							<div class="logo-element shojumaru logo-navbar">
 									Ck-srv
