@@ -3,7 +3,7 @@
 		<h3>Gerenciar Usuários</h3>
 	</div>
 </div>
-
+<?php echo $this->Session->flash(); ?>
 <div class="col-md-12 white-bg">
 <?php echo $this->Form->create('Usuario', array('admin' => true, 'novalidate', 'inputDefaults' => array('div' => array('class' => 'col-sm-6 form-group'))));?>
 

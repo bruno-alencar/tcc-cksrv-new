@@ -161,6 +161,13 @@ function altera_status_servidor_ativo_inativo(servidor_id){
 
 function testar_conexao(){
 	usuario = $('#usuario').val();
-	usuario = $('#senha').val();
-	alert('Conexão efetuada com sucesso.');
+	senha = $('#senha').val();
+	ip = $('#ip').val();
+
+	$.post(
+		cakebase+'admin/servidores/testar_conexao/'+usuario+'/'+senha+'/'+ip,
+			function(data){
+				console.log(data);
+			}
+	);
 }

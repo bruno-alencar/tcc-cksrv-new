@@ -80,7 +80,6 @@
 				<!-- Centro da página, onde as outras serão carregadas -->
 				<div class="row wrapper page-heading no-padding min-height white-bg">
 					<div class="col-sm-12 no-padding">
-						<?php echo $this->Session->flash(); ?>
 						<?php echo $this->fetch('content') ?>
 						<?php #echo $this->element('sql_dump') ?>
 					</div>
