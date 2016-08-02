@@ -12,3 +12,4 @@ class Status extends AppModel {
 	const FINALIZADO = 2;
 
 }
+?>

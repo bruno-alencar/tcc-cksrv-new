@@ -44,3 +44,4 @@ class AppModel extends Model {
 	}
 	
 }
+?>

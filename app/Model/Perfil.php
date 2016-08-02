@@ -14,3 +14,4 @@ class Perfil extends AppModel {
 		)
 	);
 }
+?>

@@ -11,7 +11,7 @@
 	</div>
 	<div class="col-md-8 col-md-offset-2">
 		<?php echo $this->Form->create('Servidor', array('admin' => true, 'class' => 'form-horizontal', 'novalidate', 'inputDefaults' => array('class' => 'col-md-12', 'div' => array('class' => 'form-group col-md-12'), 'label' => false)));?>
-			
+		<?php echo $this->Form->hidden('id', array('value' => $this->request->data['Servidor']['id'])); ?>
 		<div class="col-sm-12">
 			<?php echo $this->Form->input('host', array('class' => 'col-sm-9', 'placeholder' => 'Insira o host', 'label' => array('text' => 'Host:', 'class' => 'col-sm-2')));?>
 			<?php echo $this->Form->input('ip', array('class' => 'col-sm-9', 'placeholder' => 'Insira o ip', 'label' => array('text' => 'IP:', 'class' => 'col-sm-2')));?>

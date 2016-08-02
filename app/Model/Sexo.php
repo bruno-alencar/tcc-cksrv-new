@@ -17,3 +17,4 @@ class Sexo extends AppModel {
 		),
 	);
 }
+?>

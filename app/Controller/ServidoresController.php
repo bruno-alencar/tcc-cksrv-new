@@ -24,9 +24,10 @@ class ServidoresController extends AppController {
 		}
 	}
 
-	public function admin_view($servidor_id){
+	public function admin_view($servidor_id = null){
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Servidor->save($this->request->data)) {
+			print_r($this->Servidor->save($this->request->data['Servidor']));
+			if ($this->Servidor->save($this->request->data['Servidor'])) {
 
 				$this->Session->setFlash('Servidor atualizado com sucesso.', 'flash_success');
 				return $this->redirect(array('action' => 'index'));
@@ -46,18 +47,6 @@ class ServidoresController extends AppController {
 
 		$ativar_desativar = $usuario['Servidor']['status_id'] == 1 ? 0 : 1;
 		$this->Servidor->saveField('status_id', $ativar_desativar);
-	}
-
-	public function admin_testar_conexao($usuario, $senha, $ip){
-		$this->autoRender = false;
-
-		// echo "/Library/WebServer/Documents/alfa_ck/app/webroot/shell/connect/connect.sh $usuario $senha $ip";
-
-		// $connect = shell_exec("/Library/WebServer/Documents/alfa_ck/app/webroot/shell/connect/connect.sh $usuario $senha $ip");
-		// $command = 'sshpass -p \"conlicitacao\" scp -r connect_test.txt conlicitacao@192.168.1.73:/home/conlicitacao/';
-		// $connect = shell_exec("/Library/WebServer/Documents/alfa_ck/app/webroot/shell/connect/connect.sh");
-
-		echo $connect;
 	}
 }
 ?>

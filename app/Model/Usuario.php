@@ -61,3 +61,4 @@ class Usuario extends AppModel {
 		)
 	);
 }
+?>
