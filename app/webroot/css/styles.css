@@ -147,3 +147,8 @@ table.no-border tr td a{margin-left: 8px}
 
 .error-message{color:red; clear:both; padding-left: 130px; font-size: 15px;}
 .form-error{border-color: red;}
+
+.critical-color{ color: #ffad33; }
+.critical-border input{ border-color: #ffad33; }
+.warning-color{ color: #e60000; }
+.warning-border input{ border-color: #e60000; }

@@ -40,7 +40,7 @@
 						<a class="collapse-link">
 	                    	<i class="fa fa-chevron-up"></i>
 	                    </a>
-	                    <?php echo $this->Html->link('', array('controller' => 'clientes', 'action' => 'add_servico', $this->request->data['Servidor']['id']), array('title' => 'Adicionar Serviço', 'onclick' => 'javascript:void(exibeModal(this))', 'class' => 'fa fa-plus showmodal pull-right')); ?>
+	                    <?php echo $this->Html->link('', array('controller' => 'servicos', 'action' => 'admin_add', $this->request->data['Servidor']['id']), array('title' => 'Adicionar Serviço', 'onclick' => 'javascript:void(exibeModal(this))', 'class' => 'fa fa-plus showmodal pull-right')); ?>
 					</div>
 				</div>
 				<div class="ibox-content">

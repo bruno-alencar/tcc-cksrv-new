@@ -26,7 +26,6 @@ class ServidoresController extends AppController {
 
 	public function admin_view($servidor_id = null){
 		if ($this->request->is(array('post', 'put'))) {
-			print_r($this->Servidor->save($this->request->data['Servidor']));
 			if ($this->Servidor->save($this->request->data['Servidor'])) {
 
 				$this->Session->setFlash('Servidor atualizado com sucesso.', 'flash_success');

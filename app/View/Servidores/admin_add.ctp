@@ -32,11 +32,11 @@
 		</div>
 
 		<div class="alert alert-info text-center col-sm-12">
-			Após a inclusão do servidor, será criado um script em <?php echo WWW_ROOT.'install.sh'; ?> que deverá ser executado no servidor alvo a ser monitorado.
+			Após a inclusão do servidor, será criado um script em <?php echo WWW_ROOT.'(ip)/install.sh'; ?> que deverá ser executado no servidor alvo a ser monitorado.
 			<br><br>
 			Comandos:
 			<br>
-			sudo scp -rp /Library/WebServer/Documents/alfa_ck/app/webroot/install.sh usuario@ip:~
+			sudo scp -rp /Library/WebServer/Documents/alfa_ck/app/webroot/(ip)/install.sh usuario@ip:~
 			<br>
 			ssh usuario@ip
 			<br>
