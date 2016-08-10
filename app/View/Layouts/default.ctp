@@ -20,7 +20,11 @@
 		<?php echo $this->Html->script('jquery-2.2.3.min.js') ?>
 		<?php echo $this->Html->script('jquery.mask.min.js'); ?>
 		<?php echo $this->Html->script('funcoes.js') ?>
-
+		<?php
+			echo $this->Html->meta ( 'favicon.ico', 'img/favicon.ico', array (
+			    'type' => 'icon' 
+			) );
+		?>
 		<script>
 			var cakebase = "<?php echo Router::url('/', true); ?>";
 		</script>
@@ -35,7 +39,7 @@
 					<ul class="nav metismenu" id="side-menu" style="display: block;">
 						<li class="nav-header">
 							<div class="text-center profile-element" style="padding: 15px;"> 
-								<?php echo $this->Html->link('C-h-e-c-k Server', array('admin' => false, 'controller' => 'monitoramento', 'action' => 'index'), array('escape' => false, 'class' => 'logo-navbar shojumaru', 'style' => 'color: #eff2f5;')) ?> 
+								<?= $this->Html->image('logo-cksrv.png', array('style' => 'width:150px; text-shadow: 10px 10px 5px #fff;')) ?>
 							</div>
 							<div class="logo-element shojumaru logo-navbar">
 									Ck-srv

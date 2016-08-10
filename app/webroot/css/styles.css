@@ -4,7 +4,7 @@
 
 body,
 .mini-navbar .nav-second-level
-.sidebar-container ul.nav-tabs li a{background-color: #808183 !important}
+.sidebar-container ul.nav-tabs li a{background-color: #6b6b47 !important}
 
 .modal-header{font-size: 20px !important; padding: 15px !important}
 
@@ -143,7 +143,7 @@ table.no-border tr td a{margin-left: 8px}
 .page-heading h3{color:#eff2f5; margin-left:50px;}
 .lista-servidores{padding: 20px;}
 .borda-servidores{border: solid 3px #e7eaec;}
-.bg-color-title-pagina{background-color:#293846; margin-bottom: 20px;}
+.bg-color-title-pagina{background-color:#4d4d33; margin-bottom: 20px;}
 
 .error-message{color:red; clear:both; padding-left: 130px; font-size: 15px;}
 .form-error{border-color: red;}
@@ -152,3 +152,13 @@ table.no-border tr td a{margin-left: 8px}
 .critical-border input{ border-color: #ffad33; }
 .warning-color{ color: #e60000; }
 .warning-border input{ border-color: #e60000; }
+
+.btn-green-default{ 
+  background-color: rgba(0, 128, 43, 0.8); 
+  color: #fff;
+}
+
+.btn-green-default:hover{
+  background-color: rgba(0, 128, 43, 0.5); 
+  color: #fff;
+}

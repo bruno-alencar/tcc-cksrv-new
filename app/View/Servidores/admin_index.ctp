@@ -18,7 +18,7 @@
 </script>
 
 <br>
-<?php echo $this->Html->link("Novo Servidor", array('controller' => 'servidores' ,'action' => 'add'), array('class' => 'btn btn-success', 'style' => 'margin-left:20px;')) ?>
+<?php echo $this->Html->link("Novo Servidor", array('controller' => 'servidores' ,'action' => 'add'), array('class' => 'btn btn-green-default', 'style' => 'margin-left:20px;')) ?>
 <br><br>
 <div class="white-bg">
 	<table class="table table-striped table-hover">

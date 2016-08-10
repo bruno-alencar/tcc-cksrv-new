@@ -23,5 +23,5 @@
 		
 
 <div class="text-center">
-	<?php echo $this->Form->end(array('label' => 'Salvar >>', 'class' => 'btn btn-success btn-lg', 'disabled', 'id' => 'salvar_servico', 'style'=>"margin-top:30px;", 'div' => false, 'onclick' => ''));?>
+	<?php echo $this->Form->end(array('label' => "Salvar", 'class' => 'btn btn-green-default btn-lg',  'id' => 'salvar_servico', 'style'=>"margin-top:30px;", 'div' => false, 'onclick' => ''));?>
 </div>

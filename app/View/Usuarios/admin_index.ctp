@@ -18,7 +18,7 @@
 </script>
 
 <br>
-<?= $this->Html->link("Novo usuário", array('admin' => true, 'controller' => 'usuarios' ,'action' => 'add'), array('class' => 'btn btn-success', 'style' => 'margin-left:20px;')) ?><br>
+<?= $this->Html->link("Novo usuário", array('admin' => true, 'controller' => 'usuarios' ,'action' => 'add'), array('class' => 'btn btn-green-default', 'style' => 'margin-left:20px;')) ?><br>
 <br>
 
 <div class="crud-fundo-branco">

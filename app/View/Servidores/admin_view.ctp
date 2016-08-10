@@ -26,7 +26,7 @@
 			<?php echo $this->Form->input('detalhes_so', array('class' => 'col-sm-9', 'placeholder' => 'Insira o Sistema Operacional', 'label' => array('text' => 'Sistema Operacional:', 'class' => 'col-sm-2')));?>
 		</div>
 
-		<?php echo $this->Form->end(array('label' => 'Salvar', 'class' => 'btn btn-success btn-sm', 'div' => array('class' => 'col-md-12 form-group text-center'))); ?>
+		<?php echo $this->Form->end(array('label' => 'Salvar', 'class' => 'btn btn-green-default btn-sm', 'div' => array('class' => 'col-md-12 form-group text-center'))); ?>
 			
 	</div>
 	<div class="row text-center">
