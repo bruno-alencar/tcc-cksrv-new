@@ -39,7 +39,7 @@
 					<ul class="nav metismenu" id="side-menu" style="display: block;">
 						<li class="nav-header">
 							<div class="text-center profile-element" style="padding: 15px;"> 
-								<?= $this->Html->image('logo-cksrv.png', array('style' => 'width:150px; text-shadow: 10px 10px 5px #fff;')) ?>
+								<?= $this->Html->image('logo-cksrv.png', array('style' => 'width:150px;')) ?>
 							</div>
 							<div class="logo-element shojumaru logo-navbar">
 									Ck-srv
@@ -93,7 +93,7 @@
 				<!-- Rodapé - Footer -->
 				<div class="footer text-center">
 					<div>
-						<strong>© Check-Server</strong> 2016 - <?php echo date('Y')?></div>
+						<strong><?= $this->Html->image('favicon.ico') ?> Check-Server</strong> 2016 - <?php echo date('Y')?></div>
 					</div>
 				</div>
 			</div>
