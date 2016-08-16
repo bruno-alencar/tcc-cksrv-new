@@ -31,7 +31,7 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="background-image">
 
 			<!-- Manu lateral -->
 			<nav class="navbar-default navbar-static-side" role="navigation">
@@ -41,8 +41,8 @@
 							<div class="text-center profile-element" style="padding: 15px;"> 
 								<?= $this->Html->image('logo-cksrv.png', array('style' => 'width:150px;')) ?>
 							</div>
-							<div class="logo-element shojumaru logo-navbar">
-									Ck-srv
+							<div class="logo-element shojumaru logo-navbar background-image">
+									<?= $this->Html->image('logo-cksrv.png', array('style' => 'width:70px;')) ?>
 							</div>
 						</li>
 						<li>

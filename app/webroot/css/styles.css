@@ -134,7 +134,7 @@ table.no-border tr td a{margin-left: 8px}
   text-shadow: #fff 1px 2px 5px;
   font-weight: bold;
   color: #eff2f5;
-  background-color: #808183;
+  background-color: #e6e6e6;
 }
 
 /* Cabeçalhos das páginas */
@@ -161,4 +161,8 @@ table.no-border tr td a{margin-left: 8px}
 .btn-green-default:hover{
   background-color: rgba(0, 128, 43, 0.5); 
   color: #fff;
+}
+
+.background-image{
+    background-image: url("../img/textura-menu-lateral.png");
 }
