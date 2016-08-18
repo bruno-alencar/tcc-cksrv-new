@@ -11,7 +11,7 @@ class AppController extends Controller {
 	            'controller' => 'usuarios',
 	            'action' => 'login'
 	        ),
-	        'loginRedirect' => array('controller' => 'atendimentos', 'action' => 'dashboard'),
+	        'loginRedirect' => array('controller' => 'monitoramento', 'action' => 'index'),
 			'authError'=>'Você tem permissão para acessar esta página?',
 			'authenticate' => array(
 			    'Form' => array(
