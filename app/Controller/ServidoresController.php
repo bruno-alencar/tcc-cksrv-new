@@ -6,11 +6,8 @@ class ServidoresController extends AppController {
 	}
 
 	public function admin_index(){
-		$servidores = $this->Servidores->findAllByStatusId(1);
+		$servidores = $this->Servidor->find('all');
 
-		foreach ($servidores as $s) {
-			$servidores['ip'] = $s;
-		}
 		$this->set(compact('servidores'));
 	}
 

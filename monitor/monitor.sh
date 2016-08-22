@@ -39,7 +39,7 @@ for i in "${arr[@]}"; do
 				# Falha, da um insert na base com os dados de falha na comunicação
 				mysql -h localhost -u root -p4334N@k0N -e "UPDATE servicos SET status_servidor=0 where id=$ID;" --database cksrv
 				# Envia alerta para todos os usuários
-				echo 'MENSAGEM DE ALERTAAAAAA SERVIDOR '$i' CAIUUU'
+				echo 'ALERTA'
 			fi
 		fi
 

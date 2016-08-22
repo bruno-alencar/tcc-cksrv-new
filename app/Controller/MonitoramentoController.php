@@ -4,14 +4,19 @@
 
     public function beforeFilter() {
         $this->loadModel('Servidor');
+        $this->loadModel('Servico');
         $this->loadModel('Status');
     }
 
 
         public function index(){
-        	$servidores = $this->Servidor->findAllByStatusId(Status::ATIVO);
-
-        	$this->set(compact('servidores'));
+        	$serv = $this->Servico->find('all');
+            $i = 0;
+            foreach ($serv as $s) {
+                $servicos[$s['Servico']['servidor_id']][$s['Servico']['tipo_servico_id']][$i] = $s;
+                $i++;
+            }
+        	$this->set(compact('servicos'));
         }
 
 
