@@ -12,10 +12,10 @@
 					echo '<div class="ibox-title">';
 					
 						$status_servidor = '#2eb82e'; // Verde
-						if($s[1][0]['Servico']['tipo_servico_id'] == 0)
+						if($s[1]['Servico']['status_servidor'] == 0)
 							$status_servidor = '#cc0000'; // Vermelho
 
-						echo '<h5 style="color:'.$status_servidor.'"><i class="fa fa-linux"></i> - '.$s[1][0]['Servico']['ip'].'</h5>';
+						echo '<h5 style="color:'.$status_servidor.'"><i class="fa fa-linux"></i> - '.$s[1]['Servico']['ip'].' - '.$servidor[$s[1]['Servico']['servidor_id']]['Servidor']['host'].'</h5>';
 						echo '<div class="ibox-tools">';
 							echo '<a class="collapse-link">';
 								echo '<i class="fa fa-chevron-up"></i>';
@@ -23,6 +23,7 @@
 						echo '</div>';
 					echo '</div>';
 					echo '<div class="ibox-content">';
+
 
 						if (!empty($s[2])) {
 							foreach ($s[2] as $load) {

@@ -166,3 +166,9 @@ table.no-border tr td a{margin-left: 8px}
 .background-image{
     background-image: url("../img/textura-menu-lateral.png");
 }
+
+.footer{
+  
+  display: block;
+  bottom: auto !important;
+}

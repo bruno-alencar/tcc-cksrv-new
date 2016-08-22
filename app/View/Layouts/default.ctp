@@ -89,13 +89,12 @@
 					</div>
 				</div>
 
-				
 				<!-- Rodapé - Footer -->
-				<div class="footer text-center">
+				<footer class="footer text-center" style="margin-top:50px">
 					<div>
 						<strong><?= $this->Html->image('favicon.ico') ?> Check-Server</strong> 2016 - <?php echo date('Y')?></div>
 					</div>
-				</div>
+				</footer>
 			</div>
 		</div>
 		<!-- Mainly scripts -->
