@@ -14,7 +14,7 @@
 
 	<?php
 		if($this->action == 'admin_edit')
-			echo $this->Form->hidden('id',array('class' => 'col-sm-2', 'value' => $this->request->data['Usuario']['id']));
+			echo $this->Form->hidden('id',array('value' => $this->request->data['Usuario']['id']));
 	?>
 
 		<div class="col-sm-12">

@@ -1,0 +1,3 @@
+ALTER TABLE `cksrv`.`log_servicos` 
+CHANGE COLUMN `status_id` `status_id` INT(2) NOT NULL DEFAULT '1' COMMENT '' ,
+ADD COLUMN `status_servidor` INT(2) NOT NULL COMMENT '' AFTER `resultado`;

@@ -1,0 +1,3 @@
+ALTER TABLE `cksrv`.`log_servicos` 
+CHANGE COLUMN `servidor_id` `servico_id` INT(11) NOT NULL COMMENT '' ,
+CHANGE COLUMN `descricao` `resultado` TEXT NOT NULL COMMENT '' ;

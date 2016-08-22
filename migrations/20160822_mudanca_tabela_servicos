@@ -1,0 +1,3 @@
+ALTER TABLE `cksrv`.`servicos` 
+ADD COLUMN `resultado` INT(5) NULL DEFAULT 0 COMMENT '' AFTER `particao`,
+ADD COLUMN `status_servidor` INT(2) NULL COMMENT '' AFTER `resultado`;

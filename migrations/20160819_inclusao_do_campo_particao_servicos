@@ -1,0 +1,2 @@
+ALTER TABLE `cksrv`.`servicos` 
+ADD COLUMN `particao` VARCHAR(45) NULL COMMENT '' AFTER `warning`;

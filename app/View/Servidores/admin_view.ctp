@@ -3,7 +3,7 @@
 		<h3>Gerenciar Servidores</h3>
 	</div>
 </div>
-
+<?php echo $this->Session->flash(); ?>
 <div class="col-md-12 white-bg min-height">
 	<div >
 		<h2><b><?php echo $this->request->data['Servidor']['host'];?></b></h2>

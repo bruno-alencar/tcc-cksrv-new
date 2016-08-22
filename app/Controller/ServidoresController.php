@@ -1,13 +1,16 @@
 <?php 
 class ServidoresController extends AppController {
 
-	// public function beforeFilter() {       
-
-	// }
+	public function beforeFilter() {       
+		$this->loadModel('Servicos');
+	}
 
 	public function admin_index(){
-		$servidores = $this->Servidor->find('all');
+		$servidores = $this->Servidores->findAllByStatusId(1);
 
+		foreach ($servidores as $s) {
+			$servidores['ip'] = $s;
+		}
 		$this->set(compact('servidores'));
 	}
 
