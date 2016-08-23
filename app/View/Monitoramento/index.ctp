@@ -7,7 +7,7 @@
 <div class="row lista-servidores">
 	<?php
 		foreach ($servicos as $s):
-			echo '<div class="col-lg-4 lista-servidores">';
+			echo '<div class="col-lg-3 lista-servidores">';
 				echo '<div class="ibox float-e-margins borda-servidores">';
 					echo '<div class="ibox-title">';
 					
@@ -73,7 +73,7 @@
 								if($process_z['Servico']['resultado'] > $process_z['Servico']['warning'])
 									$status = '#cc0000'; // Vermelho
 
-								echo '<p style="color:'.$status.'"> Quantidade de Processos Zombie: '.$load['Servico']['resultado'].' - Last Check: </p>';
+								echo '<p style="color:'.$status.'"> Processos Zombie: '.$load['Servico']['resultado'].' - Last Check: </p>';
 							}
 						}
 

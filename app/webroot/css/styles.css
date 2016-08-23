@@ -142,7 +142,7 @@ table.no-border tr td a{margin-left: 8px}
 .page-heading{padding: 10px;}
 .page-heading h3{color:#eff2f5; margin-left:50px;}
 .lista-servidores{padding: 20px;}
-.borda-servidores{border: solid 3px #e7eaec;}
+.borda-servidores{border: solid 1px #e7eaec;}
 .bg-color-title-pagina{background-color:#333333; margin-bottom: 20px;}
 
 .error-message{color:red; clear:both; padding-left: 130px; font-size: 15px;}
@@ -171,4 +171,8 @@ table.no-border tr td a{margin-left: 8px}
   
   display: block;
   bottom: auto !important;
+}
+
+.ibox-title {
+  background-color: #f2f2f2;
 }
