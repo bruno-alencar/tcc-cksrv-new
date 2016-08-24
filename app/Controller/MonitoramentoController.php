@@ -28,10 +28,10 @@
             foreach ($serv as $s) {
 
                 if($s['Servico']['tipo_servico_id'] == 1){
-                     $servicos[$s['Servico']['servidor_id']][$s['Servico']['tipo_servico_id']] = $s;
+                    $servicos[$s['Servico']['servidor_id']][$s['Servico']['tipo_servico_id']] = $s;
                 }else{
-                // Foreach para juntar os serviços com o id do servidor como indice
-                $servicos[$s['Servico']['servidor_id']][$s['Servico']['tipo_servico_id']][$i] = $s;
+                    // Foreach para juntar os serviços com o id do servidor como indice
+                    $servicos[$s['Servico']['servidor_id']][$s['Servico']['tipo_servico_id']][$i] = $s;
                 }
 
                 // incrementa o contador

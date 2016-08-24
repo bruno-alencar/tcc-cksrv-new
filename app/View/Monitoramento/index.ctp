@@ -24,7 +24,7 @@
 					echo '</div>';
 					echo '<div class="ibox-content">';
 
-
+					if($s[1]['Servico']['status_servidor'] == 1){
 						if (!empty($s[2])) {
 							foreach ($s[2] as $load) {
 								if($load['Servico']['resultado'] < $load['Servico']['critical'])
@@ -34,7 +34,7 @@
 								if($load['Servico']['resultado'] > $load['Servico']['warning'])
 									$status = '#cc0000'; // Vermelho
 
-								echo '<p style="color:'.$status.'"> Load da máquina: '.$load['Servico']['resultado'].' - Last Check: </p>';
+								echo '<p style="color:'.$status.'"> Load da máquina: '.$load['Servico']['resultado'].' - Ultima Verificação: '.dataBr($load['Servico']['modified']).'</p>';
 							}
 						}
 
@@ -47,7 +47,7 @@
 								if($user['Servico']['resultado'] > $user['Servico']['warning'])
 									$status = '#cc0000'; // Vermelho
 
-								echo '<p style="color:'.$status.'"> Usuários Logados: '.$load['Servico']['resultado'].' - Last Check: </p>';
+								echo '<p style="color:'.$status.'"> Usuários Logados: '.$user['Servico']['resultado'].' - Ultima Verificação: </p>';
 							}
 						}
 
@@ -60,7 +60,7 @@
 								if($process['Servico']['resultado'] > $process['Servico']['warning'])
 									$status = '#cc0000'; // Vermelho
 
-								echo '<p style="color:'.$status.'"> Quantidade de Processos: '.$load['Servico']['resultado'].' - Last Check: </p>';
+								echo '<p style="color:'.$status.'"> Qnt de Processos: '.$process['Servico']['resultado'].' - Ultima Verificação: </p>';
 							}
 						}
 
@@ -73,22 +73,25 @@
 								if($process_z['Servico']['resultado'] > $process_z['Servico']['warning'])
 									$status = '#cc0000'; // Vermelho
 
-								echo '<p style="color:'.$status.'"> Processos Zombie: '.$load['Servico']['resultado'].' - Last Check: </p>';
+								echo '<p style="color:'.$status.'"> Processos Zombie: '.$process_z['Servico']['resultado'].' - Ultima Verificação: </p>';
 							}
 						}
 
 						if (!empty($s[6])) {
 							foreach ($s[6] as $disk) {
-								if($disk['Servico']['resultado'] < $disk['Servico']['critical'])
+								if($disk['Servico']['resultado'] > $disk['Servico']['critical'])
 									$status = '#2eb82e'; // Verde
-								if($disk['Servico']['resultado'] >= $disk['Servico']['critical'] && $disk['Servico']['resultado'] < $disk['Servico']['warning'])
+								if($disk['Servico']['resultado'] <= $disk['Servico']['critical'] && $disk['Servico']['resultado'] > $disk['Servico']['warning'])
 									$status = '#ff8000'; // Laranja
-								if($disk['Servico']['resultado'] > $disk['Servico']['warning'])
+								if($disk['Servico']['resultado'] < $disk['Servico']['warning'])
 									$status = '#cc0000'; // Vermelho
 
-								echo '<p style="color:'.$status.'"> Total de espaço em disco: '.$load['Servico']['resultado'].' - Last Check: </p>';
+								echo '<p style="color:'.$status.'"> Espaço '.$disk['Servico']['particao'].': '.$disk['Servico']['resultado'].'% - Ultima Verificação: </p>';
 							}
 						}
+					}else{
+						echo '<p style="color:#cc0000"> Falha na comunicação com o servidor. <br> Ultima Verificação: '.$s[1]['Servico']['modified'].' </p>';
+					}
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';

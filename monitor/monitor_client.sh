@@ -5,7 +5,6 @@ SERVIDOR_ID=`cat id.txt`
 
 # Busca todos os servidores ativos no sistema.
 serv=`mysql -h localhost -u root -p4334N@k0N -e "select id from servicos where status_id=1 AND servidor_id=$SERVIDOR_ID" --database cksrv |sed 1d`
-
 # Transforma o resultado da busca em um array
 arr=($serv)
 
@@ -19,8 +18,6 @@ for i in "${arr[@]}"; do
 	TIPO_SERVICO=`echo $servico |cut -d' ' -f2`
 	# Filtra o Tipo do serviço para facil manuseio
 	PARTICAO=`echo $servico |cut -d' ' -f7`
-	# Filtra o campo Resultado para facil manuseio
-	echo $TIPO_SERVICO
 
 	# # # Caso o tipo do serviço for LOAD # # #
 	if [ $TIPO_SERVICO -eq 2 ]; then
