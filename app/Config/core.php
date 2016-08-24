@@ -402,6 +402,7 @@ Inflector::rules('singular', array(
 	),
 	'irregular' => array(
 		'servidores' => 'servidor',
+		'servicos' => 'servico',
 	),
 	'uninflected' => array('status')
 ));
@@ -417,7 +418,8 @@ Inflector::rules('plural', array(
 		'/^(.*)al$/i' => '\1ais',
 	),
 	'irregular' => array(
-		'servidor' => 'servidores'
+		'servidor' => 'servidores',
+		'servico' => 'servicos',
 	),
 	'uninflected' => array('status')
 ));

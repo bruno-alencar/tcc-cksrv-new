@@ -1,15 +1,14 @@
 <?php echo $this->Form->create('Servico', array('admin' => true, 'novalidate', 'inputDefaults' => array('div' => false, 'style'=>'margin-top:30px;')));?>
-
+<?php echo $this->Html->script('funcoes.js') ?>
 	<?php echo $this->Form->input('tipo_servico_id', array('empty' => 'Selecione o tipo de serviço', 'onchange' => "javascript:void(altera_texto_adicionar_servico(this.value))", 'label' => array('text' => false), 'div' => 'col-sm-12', 'style' => 'margin-bottom:30px;')); ?>
 
-	<div class="alert alert-info col-sm-12" id="mensagem-tipo-servico1" style="display:none">
+	<div class="alert alert-info col-sm-12" id="mensagem-tipo-servico6" style="display:none">
 		<p>Monitoramento de Espaço:</p><br>
 		<p>O monitoramento de espaço em disco trabalha da seguinte forma:<br>
 		Primeiro: é necessário escolher a partição que deverá ser monitorada. Ex: /home</p>
 		<p>Segundo: selecione abaixo o nível em que o sistema deverá alarmar. (Lembrando que os dados que devem ser inseridos abaixo, refere-se a % a ser monitorada) Ex: com 5% de espaço livre o sistema alarma em tela (Critical) e com 2% o sistema começa a disparar os alertas (warning).</p><br>
 		<p class="critical-color"><b>Critical</b> - neste caso o sistema irá alarmar em tela, porém não irá disparar os alertas.</p>
 		<p class="warning-color"><b>Warning</b> - neste caso o sistema irá alarmar em tela e irá disparar os alertas.</p>
-
 	</div>
 	<div class="alert alert-info col-sm-12" id="mensagem-tipo-servico2" style="display:none">
 		<p>Monitoramento de Load:</p><br>

@@ -17,6 +17,14 @@
 			echo $this->Form->hidden('id',array('value' => $this->request->data['Usuario']['id']));
 	?>
 
+	<?php
+		if($this->action == 'admin_add'){
+			echo $this->Form->hidden('Servico.tipo_servico_id',array('value' => 1));
+			echo $this->Form->hidden('Servico.critical',array('value' => 0));
+			echo $this->Form->hidden('Servico.warning',array('value' => 0));
+		}
+	?>
+
 		<div class="col-sm-12">
 			<?php echo $this->Form->input('host', array('class' => 'col-sm-9', 'placeholder' => 'Insira o host', 'label' => array('text' => 'Host:', 'class' => 'col-sm-2')));?>
 			<?php echo $this->Form->input('ip', array('class' => 'col-sm-9', 'placeholder' => 'Insira o ip', 'label' => array('text' => 'IP:', 'class' => 'col-sm-2')));?>

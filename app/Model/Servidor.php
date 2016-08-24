@@ -36,5 +36,10 @@ class Servidor extends AppModel {
 		),
 	);
 	
+	public $hasMany = array(
+		'Servico' => array(
+			'foreign_key' => 'servidor_id'
+		)
+	);
 }
 ?>

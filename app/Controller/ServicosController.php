@@ -17,7 +17,7 @@ class ServicosController extends AppController {
 		$servidor = $this->Servidores->findById($servidor_id);
 
 		// Traz um array de tipo serviços pronto para um select
-		$tipoServicos = $this->TipoServico->find('list');
+		$tipoServicos = $this->TipoServico->find('list', array('conditions' => 'TipoServico.id > 1'));
 
 		// Caso for post
 		if ($this->request->is('post') && $this->request->data) {

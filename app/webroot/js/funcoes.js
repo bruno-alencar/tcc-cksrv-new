@@ -173,18 +173,18 @@ function testar_conexao(){
 }
 
 function altera_texto_adicionar_servico(servico_id){
-	document.getElementById('mensagem-tipo-servico1').style.display = 'none';
 	document.getElementById('mensagem-tipo-servico2').style.display = 'none';
 	document.getElementById('mensagem-tipo-servico3').style.display = 'none';
 	document.getElementById('mensagem-tipo-servico4').style.display = 'none';
 	document.getElementById('mensagem-tipo-servico5').style.display = 'none';
+	document.getElementById('mensagem-tipo-servico6').style.display = 'none';
 	document.getElementById('particao').style.display = 'none';
 	$('#botao-particao').attr("disabled", true);
 
 	document.getElementById('mensagem-tipo-servico'+servico_id).style.display = 'block';
 	$('#salvar_servico').attr("disabled", false);
 
-	if (servico_id == 1){
+	if (servico_id == 6){
 		document.getElementById('particao').style.display = 'block';
 		$('#botao-particao').attr("disabled", false);
 	}else{

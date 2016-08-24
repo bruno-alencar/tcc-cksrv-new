@@ -3,7 +3,7 @@ class ServidoresController extends AppController {
 
 	public function beforeFilter() {      
 		// Load no model
-		$this->loadModel('Servicos');
+		$this->loadModel('Servico');
 	}
 
 	public function admin_index(){
@@ -20,7 +20,13 @@ class ServidoresController extends AppController {
 		// Entra caso seja post
 		if ($this->request->is('post') && $this->request->data) {
 			// Salva dos dados do servidor
-			if ($this->Servidor->save($this->request->data)) {
+			if ($this->Servidor->save($this->request->data['Servidor'])) {
+
+				$this->request->data['Servico']['servidor_id'] = $this->Servidor->id;
+				$server = $this->Servidor->findById($this->Servidor->id);
+				$this->request->data['Servico']['ip'] = $server['Servidor']['ip'];
+				$this->Servico->save($this->request->data['Servico']);
+
 				// Exibe mensagem de sucesso
 				$this->Session->setFlash('Servidor adicionado com sucesso.', 'flash_success');
 				// Redireciona para a view
