@@ -7,7 +7,7 @@
 <div class="row lista-servidores">
 	<?php
 		foreach ($servicos as $s):
-			echo '<div class="col-lg-3 lista-servidores">';
+			echo '<div class="col-lg-4 lista-servidores">';
 				echo '<div class="ibox float-e-margins borda-servidores">';
 					echo '<div class="ibox-title">';
 					
@@ -34,7 +34,14 @@
 								if($load['Servico']['resultado'] > $load['Servico']['warning'])
 									$status = '#cc0000'; // Vermelho
 
-								echo '<p style="color:'.$status.'"> Load da máquina: '.$load['Servico']['resultado'].' - Ultima Verificação: '.dataBr($load['Servico']['modified']).'</p>';
+								echo '<div class="col-sm-12" style="color:'.$status.'">';
+									echo '<div class="col-sm-5">';
+										echo '<p><i class="fa fa-spinner" style="margin-right:10px;"></i> Load da máquina: '.$load['Servico']['resultado'].'</p>';
+									echo '</div>';
+									echo '<div class="col-sm-7">';
+										echo '<p>Ultima Verificação: '.dataBr($load['Servico']['modified']).'</p>';
+									echo '</div>';
+								echo '</div>';
 							}
 						}
 
@@ -47,7 +54,14 @@
 								if($user['Servico']['resultado'] > $user['Servico']['warning'])
 									$status = '#cc0000'; // Vermelho
 
-								echo '<p style="color:'.$status.'"> Usuários Logados: '.$user['Servico']['resultado'].' - Ultima Verificação: </p>';
+								echo '<div class="col-sm-12" style="color:'.$status.'">';
+									echo '<div class="col-sm-5">';
+										echo '<p><i class="fa fa-user-times" style="margin-right:10px;"></i> Usuários Logados: '.$user['Servico']['resultado'].'</p>';
+									echo '</div>';
+									echo '<div class="col-sm-7">';
+										echo '<p>Ultima Verificação: '.dataBr($user['Servico']['modified']).'</p>';
+									echo '</div>';
+								echo '</div>';
 							}
 						}
 
@@ -60,7 +74,14 @@
 								if($process['Servico']['resultado'] > $process['Servico']['warning'])
 									$status = '#cc0000'; // Vermelho
 
-								echo '<p style="color:'.$status.'"> Qnt de Processos: '.$process['Servico']['resultado'].' - Ultima Verificação: </p>';
+								echo '<div class="col-sm-12" style="color:'.$status.'">';
+									echo '<div class="col-sm-5">';
+										echo '<p><i class="fa fa-tasks" style="margin-right:10px;"></i> Qnt de Processos: '.$process['Servico']['resultado'].'</p>';
+									echo '</div>';
+									echo '<div class="col-sm-7">';
+										echo '<p>Ultima Verificação: '.dataBr($process['Servico']['modified']).'</p>';
+									echo '</div>';
+								echo '</div>';
 							}
 						}
 
@@ -73,7 +94,14 @@
 								if($process_z['Servico']['resultado'] > $process_z['Servico']['warning'])
 									$status = '#cc0000'; // Vermelho
 
-								echo '<p style="color:'.$status.'"> Processos Zombie: '.$process_z['Servico']['resultado'].' - Ultima Verificação: </p>';
+								echo '<div class="col-sm-12" style="color:'.$status.'">';
+									echo '<div class="col-sm-5">';
+										echo '<p><i class="fa" style="margin-right:15px;"><b>Z</b></i> Processos Zombie: '.$process_z['Servico']['resultado'].'</p>';
+									echo '</div>';
+									echo '<div class="col-sm-7">';
+										echo '<p>Ultima Verificação: '.dataBr($process_z['Servico']['modified']).'</p>';
+									echo '</div>';
+								echo '</div>';
 							}
 						}
 
@@ -86,12 +114,20 @@
 								if($disk['Servico']['resultado'] < $disk['Servico']['warning'])
 									$status = '#cc0000'; // Vermelho
 
-								echo '<p style="color:'.$status.'"> Espaço '.$disk['Servico']['particao'].': '.$disk['Servico']['resultado'].'% - Ultima Verificação: </p>';
+								echo '<div class="col-sm-12" style="color:'.$status.'">';
+									echo '<div class="col-sm-5">';
+										echo '<p><i class="fa fa-line-chart" style="margin-right:10px;"></i> Espaço '.$disk['Servico']['particao'].': '.$disk['Servico']['resultado'].'%</p>';
+									echo '</div>';
+									echo '<div class="col-sm-7">';
+										echo '<p>Ultima Verificação: '.dataBr($disk['Servico']['modified']).'</p>';
+									echo '</div>';
+								echo '</div>';
 							}
 						}
 					}else{
 						echo '<p style="color:#cc0000"> Falha na comunicação com o servidor. <br> Ultima Verificação: '.$s[1]['Servico']['modified'].' </p>';
 					}
+					echo '<div class="clearfix"></div>';
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';
