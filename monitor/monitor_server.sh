@@ -1,25 +1,35 @@
 #!/bin/bash
 
+# # # Atribuir dados de conexão e acesso # # #
+# ip do servidor smtp
+SMTP_SERVER=`cat smtp_server.txt`
+# usuario sql
+SQL_U=`cat sql/mysql_user.txt` 
+# senha sql
+SQL_P=`cat sql/mysql_password.txt` 
+# ip do servidor mysql
+SQL_SERVER=`cat sql/mysql_server.txt`
+# database
+SQL_DATABASE=`cat sql/mysql_database.txt`
+
+
 # Busca todos os servidores ativos no sistema.
-serv=`mysql -h localhost -u root -p4334N@k0N -e "select ip from servidores where status_id=1" --database cksrv |sed 1d`
+serv=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select ip from servidores where status_id=1" --database $SQL_DATABASE |sed 1d`
 # Transforma o resultado da busca em um array
 arr=($serv)
-
-# pega o ip do servidor smtp
-SMTP_SERVER=`cat smtp_server.txt`
 
 # Executa um foreach de todos os servidores
 for i in "${arr[@]}"; do 
 
 	# Busca na base todos os serviços que devem ser monitorados pelo sistema do servidor em questão
-	ids=`mysql -h localhost -u root -p4334N@k0N -e "select id from servicos where ip rlike '$i'" --database cksrv |sed 1d`
+	ids=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from servicos where ip rlike '$i'" --database $SQL_DATABASE |sed 1d`
 	# Transforma o resultado da busca em um array
 	arr=($ids)
 
 	# Executa um foreach de todos os serviços relacionados ao servidor
 	for n in "${arr[@]}"; do 
 		# Busca os dados do servico individualmente
-		servico=`mysql -h localhost -u root -p4334N@k0N -e "select * from servicos where id = $n" --database cksrv |sed 1d`
+		servico=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select * from servicos where id = $n" --database $SQL_DATABASE |sed 1d`
 		# Filtra o id para facil manuseio
 		ID=`echo $servico |cut -d' ' -f1`
 		# Filtra o Tipo do serviço para facil manuseio
@@ -40,20 +50,20 @@ for i in "${arr[@]}"; do
 			# Testa se o comando foi executado com sucesso
 			if [ $? -eq 0 ]; then
 				# Sucesso, da um insert na base com os dados de sucesso
-				mysql -h localhost -u root -p4334N@k0N -e "UPDATE servicos SET status_servidor=1, modified='$MODIFIED' where id=$ID;" --database cksrv
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET status_servidor=1, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
 			# Caso não tenha sido executado com sucesso
 			else
 				# Falha, da um insert na base com os dados de falha na comunicação
-				mysql -h localhost -u root -p4334N@k0N -e "UPDATE servicos SET status_servidor=0, modified='$MODIFIED' where id=$ID;" --database cksrv
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET status_servidor=0, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
 				
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql -h localhost -u root -p4334N@k0N -e "select id from usuarios where status_id=1" --database cksrv |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql -h localhost -u root -p4334N@k0N -e "select email,ddd,celular from usuarios where id=$u" --database cksrv |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio
@@ -73,12 +83,12 @@ for i in "${arr[@]}"; do
 			if [ $RESULTADO -ge $WARNING ]; then
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql -h localhost -u root -p4334N@k0N -e "select id from usuarios where status_id=1" --database cksrv |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql -h localhost -u root -p4334N@k0N -e "select email,ddd,celular from usuarios where id=$u" --database cksrv |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio
@@ -98,12 +108,12 @@ for i in "${arr[@]}"; do
 			if [ $RESULTADO -ge $WARNING ]; then
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql -h localhost -u root -p4334N@k0N -e "select id from usuarios where status_id=1" --database cksrv |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql -h localhost -u root -p4334N@k0N -e "select email,ddd,celular from usuarios where id=$u" --database cksrv |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio
@@ -123,12 +133,12 @@ for i in "${arr[@]}"; do
 			if [ $RESULTADO -ge $WARNING ]; then
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql -h localhost -u root -p4334N@k0N -e "select id from usuarios where status_id=1" --database cksrv |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql -h localhost -u root -p4334N@k0N -e "select email,ddd,celular from usuarios where id=$u" --database cksrv |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio
@@ -148,12 +158,12 @@ for i in "${arr[@]}"; do
 			if [ $RESULTADO -ge $WARNING ]; then
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql -h localhost -u root -p4334N@k0N -e "select id from usuarios where status_id=1" --database cksrv |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql -h localhost -u root -p4334N@k0N -e "select email,ddd,celular from usuarios where id=$u" --database cksrv |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio
@@ -173,12 +183,12 @@ for i in "${arr[@]}"; do
 			if [ $RESULTADO -ge $WARNING ]; then
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql -h localhost -u root -p4334N@k0N -e "select id from usuarios where status_id=1" --database cksrv |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql -h localhost -u root -p4334N@k0N -e "select email,ddd,celular from usuarios where id=$u" --database cksrv |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio

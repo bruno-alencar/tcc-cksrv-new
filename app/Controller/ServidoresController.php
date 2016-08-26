@@ -14,8 +14,6 @@ class ServidoresController extends AppController {
 		$this->set(compact('servidores'));
 	}
 
-
-
 	public function admin_add(){
 		// Entra caso seja post
 		if ($this->request->is('post') && $this->request->data) {
