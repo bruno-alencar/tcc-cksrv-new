@@ -1,23 +1,4 @@
-# DISK=`df -h |grep $PARTICAO | awk '{print $3}' |cut -d'G' -f1 |cut -d'M' -f1`
-# MAX_SIZE=`df -h |grep $PARTICAO | awk '{print $2}' |cut -d'G' -f1 |cut -d'M' -f1`
-# DISK_TOTAL=`df -h |grep $PARTICAO | awk '{print $3}'`
-# DISK_TIPO=`echo $DISK_TOTAL | cut -c ${#DISK_TOTAL}`
-# MAX_SIZE_TOTAL=`df -h |grep $PARTICAO | awk '{print $2}'`
-# MAX_SIZE_TIPO=`echo $MAX_SIZE | cut -c ${#MAX_SIZE}`
+MYSQL
 
-# if [ "$DISK_TIPO" == "G" ]
-# then
-#         DISK_MB=$(($DISK * 1000))
-# else
-#         DISK_MB=$(($DISK * 1))
-# fi
-
-# if [ "$MAX_SIZE_TIPO" == "G" ]
-# then
-#         MAX_SIZE_MB=$(($MAX_SIZE * 1000))
-# else
-#         MAX_SIZE_MB=$(($MAX_SIZE * 1))
-# fi
-
-# X=$(($DISK_MB * 100))
-# Y=$(($X / $MAX_SIZE))
+CREATE USER 'root'@'%' IDENTIFIED BY 'cksrv';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';

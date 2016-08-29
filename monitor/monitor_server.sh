@@ -56,7 +56,7 @@ for i in "${arr[@]}"; do
 				# Falha, da um insert na base com os dados de falha na comunicação
 				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET status_servidor=0, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
 				
-				### Envia alerta para todos os usuários###
+				# # # Envia alerta para todos os usuários # # #
 				# Busca na base uma lista de usuários ativos
 				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array

@@ -4,14 +4,14 @@ SERVIDOR_ID=`cat id.txt`
 
 
 # Busca todos os servidores ativos no sistema.
-serv=`mysql -h localhost -u root -p4334N@k0N -e "select id from servicos where status_id=1 AND servidor_id=$SERVIDOR_ID" --database cksrv |sed 1d`
+serv=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from servicos where status_id=1 AND servidor_id=$SERVIDOR_ID" --database $SQL_DATABASE |sed 1d`
 # Transforma o resultado da busca em um array
 arr=($serv)
 
 # Executa um foreach de todos os servidores
 for i in "${arr[@]}"; do 
 	# Busca os dados do servico individualmente
-	servico=`mysql -h localhost -u root -p4334N@k0N -e "select * from servicos where id = $i" --database cksrv |sed 1d`
+	servico=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select * from servicos where id = $i" --database $SQL_DATABASE |sed 1d`
 	# Filtra o id para facil manuseio
 	ID=`echo $servico |cut -d' ' -f1`
 	# Filtra o Tipo do serviço para facil manuseio
@@ -23,28 +23,28 @@ for i in "${arr[@]}"; do
 	if [ $TIPO_SERVICO -eq 2 ]; then
 		LOAD=`uptime | awk '{print $11}' |cut -d',' -f1`
 		# Da um insert na base com os dados
-		mysql -h localhost -u root -p4334N@k0N -e "UPDATE servicos SET resultado=$LOAD where id=$ID;" --database cksrv
+		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$LOAD where id=$ID;" --database $SQL_DATABASE
 	fi
 
 	# # # Caso o tipo do serviço for usuários conectados # # #
 	if [ $TIPO_SERVICO -eq 3 ]; then
 		USER=`w |grep user |cut -d' ' -f8`
 		# Da um insert na base com os dados
-		mysql -h localhost -u root -p4334N@k0N -e "UPDATE servicos SET resultado=$USER where id=$ID;" --database cksrv
+		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$USER where id=$ID;" --database $SQL_DATABASE
 	fi
 
 	# # # Caso o tipo do serviço for quantidade de processos # # #
 	if [ $TIPO_SERVICO -eq 4 ]; then
 		PROCESS=`ps -ef |wc -l`
 		# Da um insert na base com os dados
-		mysql -h localhost -u root -p4334N@k0N -e "UPDATE servicos SET resultado=$PROCESS where id=$ID;" --database cksrv
+		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$PROCESS where id=$ID;" --database $SQL_DATABASE
 	fi
 
 	# # # Caso o tipo do serviço for quantidade de processos zombies # # #
 	if [ $TIPO_SERVICO -eq 5 ]; then
 		PROCESS_Z=`ps -ef |grep Z |wc -l`
 		# Da um insert na base com os dados
-		mysql -h localhost -u root -p4334N@k0N -e "UPDATE servicos SET resultado=$PROCESS_Z where id=$ID;" --database cksrv
+		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$PROCESS_Z where id=$ID;" --database $SQL_DATABASE
 	fi
 
 	# # # Caso o tipo do serviço for espaço em disco # # #
@@ -56,6 +56,6 @@ for i in "${arr[@]}"; do
 		X=$(($DISK * 100))
 		Y=$(($X / $MAX_SIZE))
 		# Da um insert na base com os dados
-		mysql -h localhost -u root -p4334N@k0N -e "UPDATE servicos SET resultado=$Y where id=$ID;" --database cksrv
+		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$Y where id=$ID;" --database $SQL_DATABASE
 	fi
 done
