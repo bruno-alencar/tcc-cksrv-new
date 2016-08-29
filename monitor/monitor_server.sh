@@ -2,15 +2,15 @@
 
 # # # Atribuir dados de conexão e acesso # # #
 # ip do servidor smtp
-SMTP_SERVER=`cat smtp_server.txt`
+SMTP_SERVER=`cat /var/www/cksrv/monitor/smtp_server.txt`
 # usuario sql
-SQL_U=`cat sql/mysql_user.txt` 
+SQL_U=`cat /var/www/cksrv/monitor/sql/mysql_user.txt` 
 # senha sql
-SQL_P=`cat sql/mysql_password.txt` 
+SQL_P=`cat /var/www/cksrv/monitor/sql/mysql_password.txt` 
 # ip do servidor mysql
-SQL_SERVER=`cat sql/mysql_server.txt`
+SQL_SERVER=`cat /var/www/cksrv/monitor/sql/mysql_server.txt`
 # database
-SQL_DATABASE=`cat sql/mysql_database.txt`
+SQL_DATABASE=`cat /var/www/cksrv/monitor/sql/mysql_database.txt`
 
 
 # Busca todos os servidores ativos no sistema.
@@ -45,7 +45,7 @@ for i in "${arr[@]}"; do
 			MODIFIED=`date +"%y-%m-%d %H:%M:%S"`
 
 			# Teste inicial: ping no servidor
-			ping -c 1 -W 0.1 $i >> /dev/null
+			ping -c 1 -W 1 $i >> /dev/null
 
 			# Testa se o comando foi executado com sucesso
 			if [ $? -eq 0 ]; then

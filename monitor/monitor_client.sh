@@ -1,6 +1,14 @@
 #!/bin/bash
 
-SERVIDOR_ID=`cat id.txt`
+SERVIDOR_ID=`cat /var/www/cksrv/monitor/id.txt`
+# usuario sql
+SQL_U=`cat /var/www/cksrv/monitor/sql/mysql_user.txt`
+# senha sql
+SQL_P=`cat /var/www/cksrv/monitor/sql/mysql_password.txt`
+# ip do servidor mysql
+SQL_SERVER=`cat /var/www/cksrv/monitor/sql/mysql_server.txt`
+# database
+SQL_DATABASE=`cat /var/www/cksrv/monitor/sql/mysql_database.txt`
 
 
 # Busca todos os servidores ativos no sistema.
@@ -21,14 +29,14 @@ for i in "${arr[@]}"; do
 
 	# # # Caso o tipo do serviço for LOAD # # #
 	if [ $TIPO_SERVICO -eq 2 ]; then
-		LOAD=`uptime | awk '{print $11}' |cut -d',' -f1`
+		LOAD=`uptime | awk '{print $9}' |cut -d',' -f1`
 		# Da um insert na base com os dados
 		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$LOAD where id=$ID;" --database $SQL_DATABASE
 	fi
 
 	# # # Caso o tipo do serviço for usuários conectados # # #
 	if [ $TIPO_SERVICO -eq 3 ]; then
-		USER=`w |grep user |cut -d' ' -f8`
+		USER=`w |grep user |cut -d' ' -f7`
 		# Da um insert na base com os dados
 		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$USER where id=$ID;" --database $SQL_DATABASE
 	fi
