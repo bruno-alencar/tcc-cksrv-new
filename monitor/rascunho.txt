@@ -1,4 +1,9 @@
-MYSQL
+# MYSQL
 
+# apt-get install mysql
+
+# Criar um usuário mysql que aceite tudo e/ou sua range de ip
 CREATE USER 'root'@'%' IDENTIFIED BY 'cksrv';
+
+# Garante privilegios ao usuário
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
