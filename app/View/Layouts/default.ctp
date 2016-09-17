@@ -20,6 +20,10 @@
 		<?php echo $this->Html->script('jquery-2.2.3.min.js') ?>
 		<?php echo $this->Html->script('jquery.mask.min.js'); ?>
 		<?php echo $this->Html->script('funcoes.js') ?>
+		<?php echo $this->Html->script('highcharts.js') ?>
+		<?php echo $this->Html->script('highcharts-3d.js') ?>
+		<?php echo $this->Html->script('exporting.js') ?>
+		
 		<?php
 			echo $this->Html->meta ( 'favicon.ico', 'img/favicon.ico', array (
 			    'type' => 'icon' 
@@ -55,7 +59,7 @@
 							<?php echo $this->Html->link('<i class="fa fa-user"></i> <span class="nav-label">Gerenciar Usuários</span>', array('admin' => true, 'controller' => 'usuarios', 'action' => 'index'), array('escape' => false)) ?> 
 						</li>
 						<li>
-							<?php echo $this->Html->link('<i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span>', 'javascript:void(0)', array('escape' => false)) ?> 
+							<?php echo $this->Html->link('<i class="fa fa-dashboard"></i> <span class="nav-label">Gerenciar Dashboards</span>', array('admin' => true, 'controller' => 'dashboards', 'action' => 'index'), array('escape' => false)) ?> 
 						</li>
 					</ul>
 				</div>
