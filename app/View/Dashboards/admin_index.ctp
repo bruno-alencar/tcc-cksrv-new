@@ -29,7 +29,10 @@
 
 
 <div class="col-sm-3">
-
+		<?php echo $this->Form->input('periodo_dash_id', array('options' => array('1' => 'Ultimo Mes',
+				 '2' => '3 Meses',
+				 '3' => 'Todo o Periodo'
+	 ),'label' => array('text' => false), 'empty' => 'Selecione o Periodo'));?>
 </div>
 
 <div class="col-sm-3">

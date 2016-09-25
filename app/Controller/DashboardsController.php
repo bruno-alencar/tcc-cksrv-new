@@ -28,6 +28,23 @@ class DashboardsController extends AppController {
 
 		if($this->request->data){
 			$servico = $this->request->data['Dashboards']['tipo_servico_id'];
+			$periodo = $this->request->data['Dashboards']['periodo_dash_id'];
+		}
+
+		if($periodo == 1){
+			$timestamp = strtotime("-1 month");
+			$tempo = date('Y-m-d', $timestamp);
+			$tempo = $tempo.' 00:00:00';
+		}
+		if($periodo == 2){
+			$timestamp = strtotime("-3 month");
+			$tempo = date('Y-m-d', $timestamp);
+			$tempo = $tempo.' 00:00:00';
+		}
+		if($periodo == 3){
+			$timestamp = strtotime("2016-01-01");
+			$tempo = date('Y-m-d', $timestamp);
+			$tempo = $tempo.' 00:00:00';
 		}
 
 
@@ -45,26 +62,26 @@ class DashboardsController extends AppController {
 
 	    $todosServidoresCritical = $this->Servico->find('all', array(
 	    							'fields' => array('count(Servidor.id) as qtde,Servidor.host'),
-	    							'conditions' => array('Servico.resultado > Servico.critical and Servico.tipo_servico_id = ' => $servico),	
+	    							'conditions' => array('Servico.resultado > Servico.critical and Servico.tipo_servico_id = ' => $servico, array('Servico.modified >' => $tempo)),	
 	    							'group' => array('Servidor.id')
 	     															));
 
 	    $todosServidoresWarning = $this->Servico->find('all', array(
 	    							'fields' => array('count(Servidor.id) as qtde,Servidor.host'),
-	    							'conditions' => array('Servico.resultado > Servico.warning and Servico.tipo_servico_id = ' => $servico),	
+	    							'conditions' => array('Servico.resultado > Servico.warning and Servico.tipo_servico_id = ' => $servico, array('Servico.modified >' => $tempo)),	
 	    							'group' => array('Servidor.id')
 	     															));
 
 	    $todosServidoresBarra = $this->Servico->find('all', array(
 	    							'fields' => array('count(Servidor.id) as qtde,Servidor.host'),
-	    							'conditions' => array('(Servico.resultado > Servico.warning or Servico.resultado > Servico.critical) and Servico.tipo_servico_id = ' => $servico),	
+	    							'conditions' => array('(Servico.resultado > Servico.warning or Servico.resultado > Servico.critical) and Servico.tipo_servico_id = ' => $servico, array('Servico.modified >' => $tempo)),	
 	    							'group' => array('Servidor.id')
 	     															));
 
 
-		$critical = $this->Servico->find('count',array('conditions' => ['Servico.resultado > Servico.critical and Servico.tipo_servico_id = ' => $servico]));
+		$critical = $this->Servico->find('count',array('conditions' => ['Servico.resultado > Servico.critical and Servico.tipo_servico_id = ' => $servico, array('Servico.modified >' => $tempo)]));
 
-		$warning = $this->Servico->find('count',array('conditions' => ['Servico.resultado > Servico.warning and Servico.tipo_servico_id = ' => $servico]));
+		$warning = $this->Servico->find('count',array('conditions' => ['Servico.resultado > Servico.warning and Servico.tipo_servico_id = ' => $servico, array('Servico.modified >' => $tempo)]));
 
 
 
