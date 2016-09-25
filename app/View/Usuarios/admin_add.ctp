@@ -29,17 +29,17 @@
 		
 		<div class="col-sm-12 form-group">
 			<div class="col-sm-6">
-				<?php echo $this->Form->input('ddd', array('class' => 'col-sm-1', 'placeholder' => 'DDD', 'type' => 'text', 'label' => array('text' => 'Celular:', 'class' => 'col-sm-2'), 'div' => false));?>
+				<?php echo $this->Form->input('ddd', array('class' => 'col-sm-2', 'placeholder' => 'DDD', 'type' => 'text', 'label' => array('text' => 'Celular:', 'class' => 'col-sm-2'), 'div' => false));?>
 				<?php echo $this->Form->input('celular', array('class' => 'col-sm-5', 'placeholder' => 'Celular', 'style' => 'margin-left:5px;', 'type' => 'text', 'label' => false, 'div' => false));?>
 			</div>
 		</div>
 
 		<div class="col-sm-12">
 			<div class="col-sm-3">
-				<?php echo $this->Form->input('sexo_id', array('empty' => 'Selecione o sexo', 'label' => array('text' => 'Sexo:', 'class' => 'col-sm-3'), 'div' => 'col-sm-12')); ?>
+				<?php echo $this->Form->input('sexo_id', array('empty' => 'Selecione o sexo', 'label' => array('text' => 'Sexo:', 'class' => 'col-sm-4'), 'div' => 'col-sm-12')); ?>
 			</div>
 			<div class="col-sm-3">
-				<?php echo $this->Form->input('perfil_id', array('empty' => 'Selecione o perfil', 'label' => array('text' => 'Perfil:', 'class' => 'col-sm-3'), 'div' => 'col-sm-12')); ?>
+				<?php echo $this->Form->input('perfil_id', array('empty' => 'Selecione o perfil', 'label' => array('text' => 'Perfil:', 'class' => 'col-sm-4'), 'div' => 'col-sm-12')); ?>
 			</div>
 		</div>
 
