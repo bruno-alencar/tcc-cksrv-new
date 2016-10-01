@@ -21,7 +21,9 @@
             
 <?php echo $this->Form->create('Dashboards', array('admin' => true, 'novalidate','controller' => 'dashboards', 'url' => 'view', 'inputDefaults' => array('div' => array('class' => 'col-sm-12 form-group'))));?>
 
+<div class="col-sm-3">
 
+</div>
 
 <div class="col-sm-3">
     <?php echo $this->Form->input('tipo_servico_id', array('empty' => 'Selecione o tipo de serviço', 'onchange' => "javascript:void(mostra_texto_servico_dash(this.value))", 'label' => array('text' => false), 'class' => 'form-control')); ?>
@@ -29,13 +31,10 @@
 
 
 <div class="col-sm-3">
-		<?php echo $this->Form->input('periodo_dash_id', array('options' => array('1' => 'Ultimo Mes',
-				 '2' => '3 Meses',
-				 '3' => 'Todo o Periodo'
-	 ),'label' => array('text' => false), 'empty' => 'Selecione o Periodo'));?>
-</div>
-
-<div class="col-sm-3">
+        <?php echo $this->Form->input('periodo_dash_id', array('options' => array('1' => 'Ultimo Mes',
+                 '2' => '3 Meses',
+                 '3' => 'Todo o Periodo'
+     ),'label' => array('text' => false), 'empty' => 'Selecione o Periodo'));?>
 
 </div>
 
@@ -44,7 +43,10 @@
 </div>
 
 
-<div class="text-center">
-    <?php echo $this->Form->end(array('label' => 'Gerar Graficos >>', 'class' => 'btn btn-green-default btn-lg', 'id' => 'enviar', 'style'=>"margin-top:30px;", 'div' => false, 'onclick' => ''));?>
+<div class="col-sm-12">
+    <div class="text-center">
+        <?php echo $this->Form->end(array('label' => 'Gerar Graficos >>', 'class' => 'btn btn-green-default btn-lg', 'id' => 'enviar', 'style'=>"margin-top:30px;", 'div' => false, 'onclick' => ''));?>
+    </div>
 </div>
+
 
