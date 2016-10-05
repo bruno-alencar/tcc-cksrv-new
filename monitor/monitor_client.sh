@@ -1,14 +1,14 @@
 #!/bin/bash
 
-SERVIDOR_ID=`cat /var/www/cksrv/monitor/id.txt`
+SERVIDOR_ID=`cat id.txt`
 # usuario sql
-SQL_U=`cat /var/www/cksrv/monitor/sql/mysql_user.txt`
+SQL_U=`cat sql/mysql_user.txt`
 # senha sql
-SQL_P=`cat /var/www/cksrv/monitor/sql/mysql_password.txt`
+SQL_P=`cat sql/mysql_password.txt`
 # ip do servidor mysql
-SQL_SERVER=`cat /var/www/cksrv/monitor/sql/mysql_server.txt`
+SQL_SERVER=`cat sql/mysql_server.txt`
 # database
-SQL_DATABASE=`cat /var/www/cksrv/monitor/sql/mysql_database.txt`
+SQL_DATABASE=`cat sql/mysql_database.txt`
 
 
 # Busca todos os servidores ativos no sistema.
