@@ -16,6 +16,8 @@ serv=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from servicos where 
 # Transforma o resultado da busca em um array
 arr=($serv)
 
+MODIFIED=`date +"%y-%m-%d %H:%M:%S"`
+
 # Executa um foreach de todos os servidores
 for i in "${arr[@]}"; do 
 	# Busca os dados do servico individualmente
@@ -31,28 +33,28 @@ for i in "${arr[@]}"; do
 	if [ $TIPO_SERVICO -eq 2 ]; then
 		LOAD=`uptime | awk '{print $9}' |cut -d',' -f1`
 		# Da um insert na base com os dados
-		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$LOAD where id=$ID;" --database $SQL_DATABASE
+		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$LOAD, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
 	fi
 
 	# # # Caso o tipo do serviço for usuários conectados # # #
 	if [ $TIPO_SERVICO -eq 3 ]; then
 		USER=`w |grep user |cut -d' ' -f7`
 		# Da um insert na base com os dados
-		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$USER where id=$ID;" --database $SQL_DATABASE
+		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$USER, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
 	fi
 
 	# # # Caso o tipo do serviço for quantidade de processos # # #
 	if [ $TIPO_SERVICO -eq 4 ]; then
 		PROCESS=`ps -ef |wc -l`
 		# Da um insert na base com os dados
-		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$PROCESS where id=$ID;" --database $SQL_DATABASE
+		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$PROCESS, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
 	fi
 
 	# # # Caso o tipo do serviço for quantidade de processos zombies # # #
 	if [ $TIPO_SERVICO -eq 5 ]; then
 		PROCESS_Z=`ps -ef |grep Z |wc -l`
 		# Da um insert na base com os dados
-		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$PROCESS_Z where id=$ID;" --database $SQL_DATABASE
+		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$PROCESS_Z, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
 	fi
 
 	# # # Caso o tipo do serviço for espaço em disco # # #
@@ -64,6 +66,6 @@ for i in "${arr[@]}"; do
 		X=$(($DISK * 100))
 		Y=$(($X / $MAX_SIZE))
 		# Da um insert na base com os dados
-		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$Y where id=$ID;" --database $SQL_DATABASE
+		mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET resultado=$Y, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
 	fi
 done

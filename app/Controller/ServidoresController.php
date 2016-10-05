@@ -4,6 +4,7 @@ class ServidoresController extends AppController {
 	public function beforeFilter() {      
 		// Load no model
 		$this->loadModel('Servico');
+		$this->loadModel('TipoServico');
 	}
 
 	public function admin_index(){
@@ -50,10 +51,21 @@ class ServidoresController extends AppController {
 				$this->Session->setFlash('Não foi possível atualizar os dados do servidor.', 'flash_danger');
 			}
 		}
+
+		// Busca todos os tipos de servico cadastrado
+		$tipoServicoTmp = $this->TipoServico->find('all');
+
+		// Faz um foreach que passa um a um
+		foreach ($tipoServicoTmp as $t) {
+			// Atribui o id do tipo servico ao indice
+			$tipoServico[$t['TipoServico']['id']] = $t;
+		}
+
 		// define id para servidor
 		$this->Servidor->id = $servidor_id;
 		// busca dados e joga na view
 		$this->request->data = $this->Servidor->read();
+		$this->set(compact('tipoServico')); 
 	}
 
 	public function admin_altera_status_servidor_ativo_inativo($servidor_id){
@@ -63,9 +75,10 @@ class ServidoresController extends AppController {
 		// define id para servidor
 		$this->Servidor->id = $servidor_id;
 		// busca dados e joga na view
-		$usuario = $this->Servidor->read();
+		$server = $this->Servidor->read();
 
-		$ativar_desativar = $usuario['Servidor']['status_id'] == 1 ? 0 : 1;
+		// Executa ternario com o status do servidor e atribui a uma váriavel que define ativo ou nao
+		$ativar_desativar = $server['Servidor']['status_id'] == 1 ? 0 : 1;
 		// salva apenas o campo status
 		$this->Servidor->saveField('status_id', $ativar_desativar);
 	}
