@@ -74,6 +74,7 @@ for i in "${arr[@]}"; do
 					# Envia e-mail aos usuários
 					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Falha na comunicação - $i" -m "Falha de comunicação com a Máquina $i."
 				done
+				php /var/www/cksrv-new/monitor/email/envio.php $n
 			fi
 		fi
 
@@ -99,6 +100,7 @@ for i in "${arr[@]}"; do
 					# Envia e-mail aos usuários
 					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Load da máquina - $i" -m "Load da máquina $i está acima do esperado."
 				done
+				php /var/www/cksrv-new/monitor/email/envio.php $n
 			fi
 		fi
 
@@ -124,6 +126,7 @@ for i in "${arr[@]}"; do
 					# Envia e-mail aos usuários
 					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Quantidade de usuários - $i" -m "Quantidade de usuários na máquina $i está acima do esperado."
 				done
+				php /var/www/cksrv-new/monitor/email/envio.php $n
 			fi
 		fi
 
@@ -149,6 +152,7 @@ for i in "${arr[@]}"; do
 					# Envia e-mail aos usuários
 					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Quantidade de processos - $i" -m "Quantidade de processos da máquina $i está acima do esperado."
 				done
+				php /var/www/cksrv-new/monitor/email/envio.php $n
 			fi
 		fi
 
@@ -174,6 +178,7 @@ for i in "${arr[@]}"; do
 					# Envia e-mail aos usuários
 					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Quantidade de processos Zombie - $i" -m "Quantidade de processos Zombie da máquina $i está acima do esperado."
 				done
+				php /var/www/cksrv-new/monitor/email/envio.php $n
 			fi
 		fi
 
@@ -199,6 +204,7 @@ for i in "${arr[@]}"; do
 					# Envia e-mail aos usuários
 					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Espaço em disco insuficiente - $i" -m "O Espaço disponível na partição $PARTICAO do servidor $i está abaixo do esperado."
 				done
+				php /var/www/cksrv-new/monitor/email/envio.php $n
 			fi
 		fi
 	done
