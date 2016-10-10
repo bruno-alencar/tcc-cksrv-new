@@ -1,16 +1,19 @@
 #!/bin/bash
 
+# Pega caminho do monitor
+CAMINHO_MONITOR=`pwd`
+
 # # # Atribuir dados de conexão e acesso # # #
 # ip do servidor smtp
-SMTP_SERVER=`cat /Library/WebServer/Documents/alfa_ck/monitor/smtp_server.txt`
+SMTP_SERVER=`cat $CAMINHO_MONITOR/smtp_server.txt`
 # usuario sql
-SQL_U=`cat /Library/WebServer/Documents/alfa_ck/monitor/sql/mysql_user.txt` 
+SQL_U=`cat $CAMINHO_MONITOR/sql/mysql_user.txt` 
 # senha sql
-SQL_P=`cat /Library/WebServer/Documents/alfa_ck/monitor/sql/mysql_password.txt` 
+SQL_P=`cat $CAMINHO_MONITOR/sql/mysql_password.txt` 
 # ip do servidor mysql
-SQL_SERVER=`cat /Library/WebServer/Documents/alfa_ck/monitor/sql/mysql_server.txt`
+SQL_SERVER=`cat $CAMINHO_MONITOR/sql/mysql_server.txt`
 # database
-SQL_DATABASE=`cat /Library/WebServer/Documents/alfa_ck/monitor/sql/mysql_database.txt`
+SQL_DATABASE=`cat $CAMINHO_MONITOR/sql/mysql_database.txt`
 
 
 # Busca todos os servidores ativos no sistema.
@@ -71,7 +74,7 @@ for i in "${arr[@]}"; do
 					# Filtra o campo Warning para facil manuseio
 					CELULAR=`echo $usuario |cut -d' ' -f3`
 				done
-				php /Library/WebServer/Documents/alfa_ck/monitor/email/envio.php $n
+				php $CAMINHO_MONITOR/email/envio.php $n
 			fi
 		fi
 
@@ -97,7 +100,7 @@ for i in "${arr[@]}"; do
 					# Envia e-mail aos usuários
 					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Load da máquina - $i" -m "Load da máquina $i está acima do esperado."
 				done
-				php /Library/WebServer/Documents/alfa_ck/monitor/email/envio.php $n
+				php $CAMINHO_MONITOR/email/envio.php $n
 			fi
 		fi
 
@@ -123,8 +126,7 @@ for i in "${arr[@]}"; do
 					# Envia e-mail aos usuários
 					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Quantidade de usuários - $i" -m "Quantidade de usuários na máquina $i está acima do esperado."
 				done
-				echo $n
-				php /Library/WebServer/Documents/alfa_ck/monitor/email/envio.php $n
+				php $CAMINHO_MONITOR/email/envio.php $n
 			fi
 		fi
 
@@ -150,7 +152,7 @@ for i in "${arr[@]}"; do
 					# Envia e-mail aos usuários
 					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Quantidade de processos - $i" -m "Quantidade de processos da máquina $i está acima do esperado."
 				done
-				php /Library/WebServer/Documents/alfa_ck/monitor/email/envio.php $n
+				php $CAMINHO_MONITOR/email/envio.php $n
 			fi
 		fi
 
@@ -176,7 +178,7 @@ for i in "${arr[@]}"; do
 					# Envia e-mail aos usuários
 					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Quantidade de processos Zombie - $i" -m "Quantidade de processos Zombie da máquina $i está acima do esperado."
 				done
-				php /Library/WebServer/Documents/alfa_ck/monitor/email/envio.php $n
+				php $CAMINHO_MONITOR/email/envio.php $n
 			fi
 		fi
 
@@ -202,7 +204,7 @@ for i in "${arr[@]}"; do
 					# Envia e-mail aos usuários
 					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Espaço em disco insuficiente - $i" -m "O Espaço disponível na partição $PARTICAO do servidor $i está abaixo do esperado."
 				done
-				php /Library/WebServer/Documents/alfa_ck/monitor/email/envio.php $n
+				php $CAMINHO_MONITOR/email/envio.php $n
 			fi
 		fi
 	done

@@ -1,14 +1,17 @@
 #!/bin/bash
 
-SERVIDOR_ID=`cat id.txt`
+# Pega caminho do monitor
+CAMINHO_MONITOR=`pwd`
+
+SERVIDOR_ID=`cat $CAMINHO_MONITOR/id.txt`
 # usuario sql
-SQL_U=`cat sql/mysql_user.txt`
+SQL_U=`cat $CAMINHO_MONITOR/sql/mysql_user.txt`
 # senha sql
-SQL_P=`cat sql/mysql_password.txt`
+SQL_P=`cat $CAMINHO_MONITOR/sql/mysql_password.txt`
 # ip do servidor mysql
-SQL_SERVER=`cat sql/mysql_server.txt`
+SQL_SERVER=`cat $CAMINHO_MONITOR/sql/mysql_server.txt`
 # database
-SQL_DATABASE=`cat sql/mysql_database.txt`
+SQL_DATABASE=`cat $CAMINHO_MONITOR/sql/mysql_database.txt`
 
 
 # Busca todos os servidores ativos no sistema.
