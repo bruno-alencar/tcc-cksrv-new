@@ -3,57 +3,81 @@
 // Recebe o id do serviço
 $servico = $argv[1];
 
-$conecta = mysql_connect("127.0.0.1", "root", "4334N@k0N") or print (mysql_error()); 
-mysql_select_db("cksrv", $conecta) or print(mysql_error()); 
+print_r(shell_exec("cat ../sql/mysql_user.txt"));
 
-$servico_tmp = mysql_query("select * from servicos where id=$servico;"); 
-$servico = mysql_fetch_row($servico_tmp);
 
-$tipo_servico = $servico[1];
-$servidor_id = $servico[2];
-$ip = $servico[3];
-$warning = $servico[5];
-$particao = $servico[6];
-$resultado = $servico[7];
 
-$tipo_servico_tmp = mysql_query("select * from tipo_servicos where id=$tipo_servico;"); 
-$tipo_servico = mysql_fetch_row($tipo_servico_tmp);
-$tipo = $tipo_servico[1];
+// $mysqli = new mysqli("localhost", "root", "4334N@k0N", "cksrv");
 
-$subject = "Alerta CKSRV - servidor $ip - $tipo";
-$body = "O servidor $ip está com situação em WARNING, favor verificar.";
 
-require("PHPMailer/class.phpmailer.php");
-	$mail = new PHPMailer;
+// $servico_tmp = $mysqli->query("select * from servicos where id=$servico;", MYSQLI_USE_RESULT);
 
-$user_tmp = mysql_query("select * from usuarios where status_id=1;"); 
-while ($user = mysql_fetch_row($user_tmp)) {
-	$email = $user[4];
+// foreach ($servico_tmp as $servico) {
+// 	$servico_id = $servico['id'];
+// 	$tipo_servico_id = $servico['tipo_servico_id'];
+// 	$servidor_ip = $servico['ip'];
+// }
 
-	date_default_timezone_set('Etc/UTC');
+// $mysqli->close();
 
-	$mail->isSMTP();
 
-	$mail->SMTPDebug = 0;
-	$mail->Debugoutput = 'html';
-	$mail->Host = 'ssl://smtp.gmail.com'; // SMTP DO SEU EMAIL
-	$mail->Port = 465;
-	$mail->SMTPAuth = true;
-	$mail->Username = "cksrv2016@gmail.com"; // SEU EMAIL
-	$mail->Password = "cksrv@k0N"; // SUA SENHA
-	$mail->setFrom('cksrv2016@gmail.com', 'cksrv');
-	$mail->addReplyTo('cksrv2016@gmail.com', 'Reply');
-	$mail->addAddress($email, 'allan');
-	$mail->Subject = $subject;
-	$mail->Body = $body;
+// $mysqli = new mysqli("localhost", "root", "4334N@k0N", "cksrv");
+// $tipo_servico_tmp = $mysqli->query("select servico from tipo_servicos where id=$tipo_servico_id;", MYSQLI_USE_RESULT);
 
-	if (!$mail->send()) {
-	   echo "Ocorreu algum problema e não conseguimos entregar o seu email: " . $mail->ErrorInfo;
-	} else {
-	   echo "Mensagem enviada!";
-	}; 
-}
+// foreach ($tipo_servico_tmp as $tipo_servico) {
+// 	$tipo = $tipo_servico['servico'];
+// }
 
-mysql_close($conecta); 
+// $mysqli->close();
+
+
+
+
+
+
+// 	print_r($tipo_servico_tmp);
+
+
+	
+// 	$tipo_servico_id = $servico['tipo_servico_id'];
+// 	$tipo_servico_tmp = $mysqli->query("select servico from tipo_servicos where id=$tipo_servico_id;", MYSQLI_USE_RESULT);
+
+
+	// foreach ($tipo_servico_tmp as $tipo) {
+	// 	$tipo_servico = $tipo['servico'];
+	// }
+
+	// $ip_servidor=$servico['ip'];
+
+	// $subject = "Alerta CKSRV - servidor $ip_servidor - $tipo_servico";
+	// $body = "O servidor $ip_servidor está com situação em WARNING, favor verificar.";
+
+	// require("PHPMailer/class.phpmailer.php");
+	// $mail = new PHPMailer;
+
+	// $users = $mysqli->query("SELECT * FROM usuarios", MYSQLI_USE_RESULT);
+	// foreach ($users as $user) {
+
+	// 	date_default_timezone_set('Etc/UTC');
+	// 	$mail->isSMTP();
+	// 	$mail->SMTPDebug = 0;
+	// 	$mail->Debugoutput = 'html';
+	// 	$mail->Host = 'ssl://smtp.gmail.com'; // SMTP DO SEU EMAIL
+	// 	$mail->Port = 465;
+	// 	$mail->SMTPAuth = true;
+	// 	$mail->Username = "cksrv2016@gmail.com"; // SEU EMAIL
+	// 	$mail->Password = "cksrv@k0N"; // SUA SENHA
+	// 	$mail->setFrom('cksrv2016@gmail.com', 'cksrv');
+	// 	$mail->addReplyTo('cksrv2016@gmail.com', 'Reply');
+	// 	$mail->addAddress($user['email'], 'allan');
+	// 	$mail->Subject = $subject;
+	// 	$mail->Body = $body;
+
+	// 	if (!$mail->send()) {
+	// 	   echo "Ocorreu algum problema e não conseguimos entregar o seu email: " . $mail->ErrorInfo;
+	// 	} else {
+	// 	   echo "Mensagem enviada!";
+	// 	}
+// }	
 
 ?>
