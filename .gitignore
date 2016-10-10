@@ -9,6 +9,8 @@
 /dist
 /tags
 *.mo
+/monitor/sql
+
 
 # IDE and editor specific files #
 #################################
