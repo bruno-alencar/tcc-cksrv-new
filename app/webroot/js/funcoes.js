@@ -192,3 +192,12 @@ function altera_texto_adicionar_servico(servico_id){
 		$('#botao-particao').attr("disabled", true);
 	}
 }
+
+function delete_servico(servico_id){
+	$.post(
+		cakebase+'admin/servicos/delete/'+servico_id,
+			function(data){
+				window.location.reload();
+			}
+	);
+}

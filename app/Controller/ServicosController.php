@@ -36,5 +36,12 @@ class ServicosController extends AppController {
 		$this->set(compact('tipoServicos', 'servidor'));
 	}
 
+	public function admin_delete($servidor_id){
+		// Não deixa carregar o layout default
+		$this->autoRender = false;
+
+		$this->Servico->delete($servidor_id);
+	}
+
 }
 ?>

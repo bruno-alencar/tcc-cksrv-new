@@ -1,0 +1,10 @@
+Searching 1310 files for "autorender" (case sensitive)
+
+/Library/WebServer/Documents/alfa_ck/app/Controller/ServicosController.php:
+   39  	public function admin_delete($servidor_id){
+   40  		// Não deixa carregar o layout default
+   41: 		$this->autorender = false;
+   42  
+   43  		// busca os dados do servidor pelo id
+
+1 match in 1 file

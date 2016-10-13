@@ -59,8 +59,7 @@
 								echo '<td>'.$servico['critical'].'</td>';
 								echo '<td>'.$servico['warning'].'</td>';
 								echo '<td>'.dataBr($servico['created']).'</td>';
-								echo '<td>'.$this->Html->link('<i class="fa fa-times" style="color:red;"></i>',  'javascript:void(alert("BU"))', array('escape' => false)).'</td>';
-
+								echo $servico['tipo_servico_id'] != 1 ? '<td>'.$this->Html->link('<i class="fa fa-times" style="color:red;"></i>',  'javascript:void(delete_servico('.$servico['id'].'))', array('escape' => false)).'</td>' : '<td></td>';
 							?>
 							</tr>
 						<?php endforeach; ?>
