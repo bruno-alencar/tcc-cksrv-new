@@ -85,7 +85,7 @@ $(document).ready(function () {
 
            
                                     $qtdeCritical = $td['0']['qtde'];
-                                    $SerCritical = $td['Servidor']['host'];
+                                    $SerCritical = $td['LogServico']['ip'];
                     
 
                     ?>
@@ -142,7 +142,7 @@ $(document).ready(function () {
 
            
                                     $qtdeWarning = $td['0']['qtde'];
-                                    $SerWarning = $td['Servidor']['host'];
+                                    $SerWarning = $td['LogServico']['ip'];
                     
 
                     ?>
@@ -204,7 +204,7 @@ $(function () {
 
            
                             $qtdeBarra = $ta['0']['qtde'];
-                            $SerBarra = $ta['Servidor']['host'];
+                            $SerBarra = $ta['LogServico']['ip'];
             ?>                
 
                 ['<?php echo $SerBarra;?>',<?php echo $qtdeBarra;?>],
@@ -261,3 +261,5 @@ $(function () {
 
 
 
+
+        
