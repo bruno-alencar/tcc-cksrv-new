@@ -112,7 +112,21 @@ class DashboardsController extends AppController {
 		$warning = $this->LogServico->find('count',array('conditions' => ['LogServico.flg_warning = 1 and Servico.tipo_servico_id = ' => $servico, array('LogServico.modified >' => $tempo)]));
 
 
-		$this->set(compact('critical','warning','todosServidoresCritical','nmeServicoRetorno','todosServidoresWarning','todosServidoresBarra'));
+
+		$periodoCritical = $this->LogServico->find('all',array(
+									'fields' => array('WEEKDAY(LogServico.modified) dia,count(LogServico.flg_critical) as qtde,LogServico.modified'),	
+									'conditions' => array('LogServico.flg_critical = 1 and Servico.tipo_servico_id = ' => $servico, array('LogServico.modified >' => $tempo)),
+									'group' => array('WEEKDAY(LogServico.modified)')
+											));
+
+		$periodoWarning = $this->LogServico->find('all',array(
+									'fields' => array('WEEKDAY(LogServico.modified) dia,count(LogServico.flg_critical) as qtde,LogServico.modified'),	
+									'conditions' => array('LogServico.flg_warning = 1 and Servico.tipo_servico_id = ' => $servico, array('LogServico.modified >' => $tempo)),
+									'group' => array('WEEKDAY(LogServico.modified)')
+											));
+
+
+		$this->set(compact('critical','warning','todosServidoresCritical','nmeServicoRetorno','todosServidoresWarning','todosServidoresBarra','periodoCritical','periodoWarning'));
 
 	}
 
