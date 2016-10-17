@@ -85,7 +85,7 @@ $(document).ready(function () {
 
            
                                     $qtdeCritical = $td['0']['qtde'];
-                                    $SerCritical = $td['Servidor']['host'];
+                                    $SerCritical = $td['LogServico']['ip'];
                     
 
                     ?>
@@ -142,7 +142,7 @@ $(document).ready(function () {
 
            
                                     $qtdeWarning = $td['0']['qtde'];
-                                    $SerWarning = $td['Servidor']['host'];
+                                    $SerWarning = $td['LogServico']['ip'];
                     
 
                     ?>
@@ -204,7 +204,7 @@ $(function () {
 
            
                             $qtdeBarra = $ta['0']['qtde'];
-                            $SerBarra = $ta['Servidor']['host'];
+                            $SerBarra = $ta['LogServico']['ip'];
             ?>                
 
                 ['<?php echo $SerBarra;?>',<?php echo $qtdeBarra;?>],
@@ -229,6 +229,133 @@ $(function () {
 });
 });
 
+
+$(function () {
+     $(document).ready(function () {  
+    $('#chart-line-critical').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: '<?php echo "Periodo de alarmes criticals gerais do serviço: ".$nmeServicoRetorno?>'
+        },
+        xAxis: {
+            categories: [
+            <?php
+                    foreach ($periodoCritical as $ta) {
+
+           
+                            //$qtdeBarra = $ta['0']['qtde'];
+                            $dataCritical = $ta['LogServico']['modified'];
+            ?>                
+
+                ['<?php echo $dataCritical;?>'],
+
+            <?php } ?>    
+
+            ],
+        },
+        yAxis: {
+            title: {
+                text: 'Qtde Critical'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+
+            data: [
+            <?php
+                    foreach ($periodoCritical as $ta) {
+
+           
+                            //$qtdeBarra = $ta['0']['qtde'];
+                            $qtdeCritical = $ta['0']['qtde'];
+            ?>                
+
+                [<?php echo $qtdeCritical;?>],
+
+            <?php } ?>    
+
+            ],
+            name: '<?php echo $nmeServicoRetorno?>'
+            
+        }]
+    });
+});
+});
+
+
+
+
+
+
+$(function () {
+     $(document).ready(function () {  
+    $('#chart-line-warning').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: '<?php echo "Periodo de alarmes Warnings gerais do serviço: ".$nmeServicoRetorno?>'
+        },
+        xAxis: {
+            categories: [
+            <?php
+                    foreach ($periodoWarning as $ta) {
+
+           
+                            //$qtdeBarra = $ta['0']['qtde'];
+                            $dataWarning = $ta['LogServico']['modified'];
+            ?>                
+
+                ['<?php echo $dataWarning;?>'],
+
+            <?php } ?>    
+
+            ],
+        },
+        yAxis: {
+            title: {
+                text: 'Qtde Warning'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+
+            data: [
+            <?php
+                    foreach ($periodoWarning as $ta) {
+
+                            $qtdeWarning = $ta['0']['qtde'];
+            ?>                
+
+                [<?php echo $qtdeWarning;?>],
+
+            <?php } ?>    
+
+            ],
+            name: '<?php echo $nmeServicoRetorno?>'
+            
+        }]
+    });
+});
+});
+
+
 </script>
 
         <div class="col-sm-4">
@@ -249,8 +376,6 @@ $(function () {
             <div id="chart-pizza3"></div>
 
         </div>
-
-
     
 
         <div class="col-sm-12">
@@ -260,4 +385,14 @@ $(function () {
         </div>  
 
 
+    <div class="col-sm-12">
 
+            <div id="chart-line-critical"></div>
+
+    </div>  
+
+    <div class="col-sm-12">
+
+            <div id="chart-line-warning"></div>
+
+    </div>  

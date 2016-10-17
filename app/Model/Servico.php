@@ -8,6 +8,12 @@ class Servico extends AppModel {
 			'foreign_key' => 'servidor_id'
 		)
 	);
+
+	public $hasMany = array(
+        'LogServico' => array(
+            'foreign_key' => 'id'
+         )
+    );
 	
 }
 ?>

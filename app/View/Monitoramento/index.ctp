@@ -32,7 +32,7 @@
 										$status = '#2eb82e'; // Verde
 									if($load['resultado'] >= $load['critical'] && $load['resultado'] < $load['warning'])
 										$status = '#ff8000'; // Laranja
-									if($load['resultado'] > $load['warning'])
+									if($load['resultado'] >= $load['warning'])
 										$status = '#cc0000'; // Vermelho
 
 									echo '<div class="col-sm-12" style="color:'.$status.'">';
@@ -52,7 +52,7 @@
 										$status = '#2eb82e'; // Verde
 									if($user['resultado'] >= $user['critical'] && $user['resultado'] < $user['warning'])
 										$status = '#ff8000'; // Laranja
-									if($user['resultado'] > $user['warning'])
+									if($user['resultado'] >= $user['warning'])
 										$status = '#cc0000'; // Vermelho
 
 									echo '<div class="col-sm-12" style="color:'.$status.'">';

@@ -4,16 +4,15 @@
 CAMINHO_MONITOR=`pwd`
 
 # # # Atribuir dados de conexão e acesso # # #
-# ip do servidor smtp
-SMTP_SERVER=`cat $CAMINHO_MONITOR/smtp_server.txt`
+
 # usuario sql
-SQL_U=`cat $CAMINHO_MONITOR/sql/mysql_user.txt` 
+SQL_U=`cat /var/www/cksrv-new/monitor/sql/mysql_user.txt` 
 # senha sql
-SQL_P=`cat $CAMINHO_MONITOR/sql/mysql_password.txt` 
+SQL_P=`cat /var/www/cksrv-new/monitor/sql/mysql_password.txt` 
 # ip do servidor mysql
-SQL_SERVER=`cat $CAMINHO_MONITOR/sql/mysql_server.txt`
+SQL_SERVER=`cat /var/www/cksrv-new/monitor/sql/mysql_server.txt`
 # database
-SQL_DATABASE=`cat $CAMINHO_MONITOR/sql/mysql_database.txt`
+SQL_DATABASE=`cat /var/www/cksrv-new/monitor/sql/mysql_database.txt`
 
 
 # Busca todos os servidores ativos no sistema.
@@ -45,6 +44,7 @@ for i in "${arr[@]}"; do
 		# # # Caso o tipo do serviço for PING # # #
 		if [ $TIPO_SERVICO -eq 1 ]; then
 
+
 			MODIFIED=`date +"%y-%m-%d %H:%M:%S"`
 
 			# Teste inicial: ping no servidor
@@ -58,7 +58,7 @@ for i in "${arr[@]}"; do
 			else
 				# Falha, da um insert na base com os dados de falha na comunicação
 				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET status_servidor=0, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
-				
+
 				# # # Envia alerta para todos os usuários # # #
 				# Busca na base uma lista de usuários ativos
 				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
@@ -73,6 +73,8 @@ for i in "${arr[@]}"; do
 					DDD=`echo $usuario |cut -d' ' -f2`
 					# Filtra o campo Warning para facil manuseio
 					CELULAR=`echo $usuario |cut -d' ' -f3`
+
+					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Sem comunicação com o servidor $i"
 				done
 				php $CAMINHO_MONITOR/envio.php $n
 			fi
@@ -97,8 +99,8 @@ for i in "${arr[@]}"; do
 					# Filtra o campo Warning para facil manuseio
 					CELULAR=`echo $usuario |cut -d' ' -f3`
 
-					# Envia e-mail aos usuários
-					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Load da máquina - $i" -m "Load da máquina $i está acima do esperado."
+					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Load da máquina - $i Load da máquina $i está acima do esperado."
+
 				done
 				php $CAMINHO_MONITOR/envio.php $n
 			fi
@@ -123,8 +125,7 @@ for i in "${arr[@]}"; do
 					# Filtra o campo Warning para facil manuseio
 					CELULAR=`echo $usuario |cut -d' ' -f3`
 
-					# Envia e-mail aos usuários
-					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Quantidade de usuários - $i" -m "Quantidade de usuários na máquina $i está acima do esperado."
+					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Quantidade de usuários - $i Quantidade de usuários na máquina $i está acima do esperado."
 				done
 				php $CAMINHO_MONITOR/envio.php $n
 			fi
@@ -149,8 +150,8 @@ for i in "${arr[@]}"; do
 					# Filtra o campo Warning para facil manuseio
 					CELULAR=`echo $usuario |cut -d' ' -f3`
 
-					# Envia e-mail aos usuários
-					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Quantidade de processos - $i" -m "Quantidade de processos da máquina $i está acima do esperado."
+					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Quantidade de processos - $i Quantidade de processos da máquina $i está acima do esperado."
+					
 				done
 				php $CAMINHO_MONITOR/envio.php $n
 			fi
@@ -175,8 +176,7 @@ for i in "${arr[@]}"; do
 					# Filtra o campo Warning para facil manuseio
 					CELULAR=`echo $usuario |cut -d' ' -f3`
 
-					# Envia e-mail aos usuários
-					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Quantidade de processos Zombie - $i" -m "Quantidade de processos Zombie da máquina $i está acima do esperado."
+					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Quantidade de processos Zombie - $i Quantidade de processos Zombie da máquina $i está acima do esperado."
 				done
 				php $CAMINHO_MONITOR/envio.php $n
 			fi
@@ -201,8 +201,7 @@ for i in "${arr[@]}"; do
 					# Filtra o campo Warning para facil manuseio
 					CELULAR=`echo $usuario |cut -d' ' -f3`
 
-					# Envia e-mail aos usuários
-					# email/sendEmail -f cksrv@cksrv.com.br -t $EMAIL -s $SMTP_SERVER -u "Cksrv Alerta - Espaço em disco insuficiente - $i" -m "O Espaço disponível na partição $PARTICAO do servidor $i está abaixo do esperado."
+					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Espaço em disco insuficiente - $i O Espaço disponível na partição $PARTICAO do servidor $i está abaixo do esperado."
 				done
 				php $CAMINHO_MONITOR/envio.php $n
 			fi

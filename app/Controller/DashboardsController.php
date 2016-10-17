@@ -8,6 +8,7 @@ class DashboardsController extends AppController {
 		$this->loadModel('TipoServico');
 		$this->loadModel('Servico');
 		$this->loadModel('Usuario');
+		$this->loadModel('LogServico');
 
 	}
 
@@ -59,7 +60,7 @@ class DashboardsController extends AppController {
 
 		}
 
-
+		/*
 	    $todosServidoresCritical = $this->Servico->find('all', array(
 	    							'fields' => array('count(Servidor.id) as qtde,Servidor.host'),
 	    							'conditions' => array('Servico.resultado > Servico.critical and Servico.tipo_servico_id = ' => $servico, array('Servico.modified >' => $tempo)),	
@@ -70,7 +71,7 @@ class DashboardsController extends AppController {
 	    							'fields' => array('count(Servidor.id) as qtde,Servidor.host'),
 	    							'conditions' => array('Servico.resultado > Servico.warning and Servico.tipo_servico_id = ' => $servico, array('Servico.modified >' => $tempo)),	
 	    							'group' => array('Servidor.id')
-	     															));
+	    														));	
 
 	    $todosServidoresBarra = $this->Servico->find('all', array(
 	    							'fields' => array('count(Servidor.id) as qtde,Servidor.host'),
@@ -82,11 +83,50 @@ class DashboardsController extends AppController {
 		$critical = $this->Servico->find('count',array('conditions' => ['Servico.resultado > Servico.critical and Servico.tipo_servico_id = ' => $servico, array('Servico.modified >' => $tempo)]));
 
 		$warning = $this->Servico->find('count',array('conditions' => ['Servico.resultado > Servico.warning and Servico.tipo_servico_id = ' => $servico, array('Servico.modified >' => $tempo)]));
+	*/ 
+		
+
+		$todosServidoresCritical = $this->LogServico->find('all', array(
+	    							'fields' => array('count(LogServico.ip) as qtde,LogServico.ip'),
+	    							'conditions' => array('LogServico.flg_critical = 1 and Servico.tipo_servico_id = ' => $servico, array('LogServico.modified >' => $tempo)),	
+	    							'group' => array('LogServico.ip')
+	     															));
+
+
+		$todosServidoresWarning = $this->LogServico->find('all', array(
+	    							'fields' => array('count(LogServico.ip) as qtde,LogServico.ip'),
+	    							'conditions' => array('LogServico.flg_warning = 1 and Servico.tipo_servico_id = ' => $servico, array('LogServico.modified >' => $tempo)),	
+	    							'group' => array('LogServico.ip')
+	     		
+	     															));
+
+		$todosServidoresBarra = $this->LogServico->find('all', array(
+	    							'fields' => array('count(LogServico.ip) as qtde,LogServico.ip'),
+	    							'conditions' => array('(LogServico.flg_critical = 1 or LogServico.flg_warning = 1) and Servico.tipo_servico_id = ' => $servico, array('LogServico.modified >' => $tempo)),	
+	    							'group' => array('LogServico.ip')
+	     															));
+
+		
+		$critical = $this->LogServico->find('count',array('conditions' => ['LogServico.flg_critical = 1 and Servico.tipo_servico_id = ' => $servico, array('LogServico.modified >' => $tempo)]));
+
+		$warning = $this->LogServico->find('count',array('conditions' => ['LogServico.flg_warning = 1 and Servico.tipo_servico_id = ' => $servico, array('LogServico.modified >' => $tempo)]));
 
 
 
+		$periodoCritical = $this->LogServico->find('all',array(
+									'fields' => array('WEEKDAY(LogServico.modified) dia,count(LogServico.flg_critical) as qtde,LogServico.modified'),	
+									'conditions' => array('LogServico.flg_critical = 1 and Servico.tipo_servico_id = ' => $servico, array('LogServico.modified >' => $tempo)),
+									'group' => array('WEEKDAY(LogServico.modified)')
+											));
 
-		$this->set(compact('critical','warning','todosServidoresCritical','nmeServicoRetorno','todosServidoresWarning','todosServidoresBarra'));
+		$periodoWarning = $this->LogServico->find('all',array(
+									'fields' => array('WEEKDAY(LogServico.modified) dia,count(LogServico.flg_critical) as qtde,LogServico.modified'),	
+									'conditions' => array('LogServico.flg_warning = 1 and Servico.tipo_servico_id = ' => $servico, array('LogServico.modified >' => $tempo)),
+									'group' => array('WEEKDAY(LogServico.modified)')
+											));
+
+
+		$this->set(compact('critical','warning','todosServidoresCritical','nmeServicoRetorno','todosServidoresWarning','todosServidoresBarra','periodoCritical','periodoWarning'));
 
 	}
 
