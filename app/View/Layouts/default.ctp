@@ -52,12 +52,9 @@
 						<li>
 							<?php echo $this->Html->link('<i class="fa fa-television"></i> <span class="nav-label">Monitorar</span>', array('admin' => false, 'controller' => 'monitoramento', 'action' => 'index'), array('escape' => false)) ?> 
 						</li>
-						<li>
-							<?php echo $this->Html->link('<i class="fa fa-server"></i> <span class="nav-label">Gerenciar Servidores</span>', array('admin' => true, 'controller' => 'servidores', 'action' => 'index'), array('escape' => false)) ?> 
-						</li>
-						<li>
-							<?php echo $this->Html->link('<i class="fa fa-user"></i> <span class="nav-label">Gerenciar Usuários</span>', array('admin' => true, 'controller' => 'usuarios', 'action' => 'index'), array('escape' => false)) ?> 
-						</li>
+						<?php echo AuthComponent::user('perfil_id') == 1 ? '<li>'.$this->Html->link('<i class="fa fa-server"></i> <span class="nav-label">Gerenciar Servidores</span>', array('admin' => true, 'controller' => 'servidores', 'action' => 'index'), array('escape' => false)).'</li>' : ''; ?> 
+						
+						<?php echo AuthComponent::user('perfil_id') == 1 ? '<li>'.$this->Html->link('<i class="fa fa-user"></i> <span class="nav-label">Gerenciar Usuários</span>', array('admin' => true, 'controller' => 'usuarios', 'action' => 'index'), array('escape' => false)).'</li>' : '';?>
 						<li>
 							<?php echo $this->Html->link('<i class="fa fa-dashboard"></i> <span class="nav-label">Gerenciar Dashboards</span>', array('admin' => true, 'controller' => 'dashboards', 'action' => 'index'), array('escape' => false)) ?> 
 						</li>
