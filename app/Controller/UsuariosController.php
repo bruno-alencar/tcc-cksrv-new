@@ -8,12 +8,8 @@ class UsuariosController extends AppController{
 	}
 
 	public function login(){
-		// $user = AuthComponent::user();
-			// if(!empty($user))
-			//      return $this->redirect($this->Auth->redirect(array('controller'=>'atendimentos', 'action'=>'index')));
 				if($this->request->is('post')){
-
-						// $this->request->data['Usuario']['senha'] = md5($this->request->data['Usuario']['senha']);
+						$this->request->data['Usuario']['senha'] = md5($this->request->data['Usuario']['senha']);
 
 						if ($this->Auth->login()) {
 								return $this->redirect($this->Auth->redirect());
@@ -39,7 +35,9 @@ class UsuariosController extends AppController{
 		$sexos = $this->Sexo->find('list');
 		$perfils = $this->Perfil->find('list');
 
-		if ($this->request->is('post') && $this->request->data) {
+		if ($this->request->is('post') && $this->request->data) {			
+			$this->request->data['Usuario']['senha'] = md5($this->request->data['Usuario']['senha']);
+
 			if ($this->Usuario->save($this->request->data)) {
 				$this->Session->setFlash('Usuário adicionado com sucesso.', 'flash_success');
 				return $this->redirect(array('action' => 'index'));
@@ -57,8 +55,9 @@ class UsuariosController extends AppController{
 		$perfils = $this->Perfil->find('list');
 
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Usuario->save($this->request->data)) {
+			$this->request->data['Usuario']['senha'] = md5($this->request->data['Usuario']['senha']);
 
+			if ($this->Usuario->save($this->request->data)) {
 				$this->Session->setFlash('Usuário atualizado com sucesso.', 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
