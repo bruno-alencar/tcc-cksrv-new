@@ -35,15 +35,15 @@
 		</div>
 
 		<div class="alert alert-info text-center col-sm-12">
-			Após a inclusão do servidor, faça a copia da pasta <?php echo WWW_ROOT.'monitoramento'; ?> e execute o script denominado como install.sh.
+			Após a inclusão do servidor, faça a copia da pasta <?php echo WWW_ROOT.'monitor'; ?> e execute o script denominado como install.sh.
 			<br><br>
 			Comandos:
 			<br>
-			sudo scp -rp /Library/WebServer/Documents/alfa_ck/app/webroot/monitoramento usuario@ip:~
+			sudo scp -rp /Library/WebServer/Documents/alfa_ck/app/webroot/monitor usuario@ip:~
 			<br>
 			ssh usuario@ip
 			<br>
-			cd ~/monitoramento
+			cd ~/monitor
 			<br>
 			sudo ./install.sh
 		</div>
