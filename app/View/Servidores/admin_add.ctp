@@ -29,24 +29,21 @@
 			<?php echo $this->Form->input('host', array('class' => 'col-sm-9', 'placeholder' => 'Insira o host', 'label' => array('text' => 'Host:', 'class' => 'col-sm-2')));?>
 			<?php echo $this->Form->input('ip', array('class' => 'col-sm-9', 'placeholder' => 'Insira o ip', 'label' => array('text' => 'IP:', 'class' => 'col-sm-2')));?>
 		</div>
-
-		<div class="col-sm-12">
-			<?php echo $this->Form->input('usuario', array('class' => 'col-sm-9', 'placeholder' => 'Insira o usuário', 'id' => 'nome', 'label' => array('text' => 'Usuário:', 'class' => 'col-sm-2')));?>
-			<?php echo $this->Form->input('senha', array('class' => 'col-sm-5', 'type' => 'password', 'placeholder' => 'Insira a senha', 'id' => 'senha', 'label' => array('text' => 'Senha:', 'class' => 'col-sm-2')));?>
-		</div>	
 		
 		<div class="col-sm-12">
 			<?php echo $this->Form->input('detalhes_so', array('class' => 'col-sm-9', 'placeholder' => 'Insira o Sistema Operacional', 'label' => array('text' => 'Sistema Operacional:', 'class' => 'col-sm-2')));?>
 		</div>
 
 		<div class="alert alert-info text-center col-sm-12">
-			Após a inclusão do servidor, será criado um script em <?php echo WWW_ROOT.'(ip)/install.sh'; ?> que deverá ser executado no servidor alvo a ser monitorado.
+			Após a inclusão do servidor, faça a copia da pasta <?php echo WWW_ROOT.'monitoramento'; ?> e execute o script denominado como install.sh.
 			<br><br>
 			Comandos:
 			<br>
-			sudo scp -rp /Library/WebServer/Documents/alfa_ck/app/webroot/(ip)/install.sh usuario@ip:~
+			sudo scp -rp /Library/WebServer/Documents/alfa_ck/app/webroot/monitoramento usuario@ip:~
 			<br>
 			ssh usuario@ip
+			<br>
+			cd ~/monitoramento
 			<br>
 			sudo ./install.sh
 		</div>

@@ -17,7 +17,7 @@
 							  </div>
 							  <div class="form-group">
 							    <label>Senha</label>
-							    <input name="data[Usuario][senha]" type="password" class="form-control" placeholder="Password">
+							    <input name="data[Usuario][senha]" type="password" class="form-control" placeholder="Senha">
 							  </div>
 							<?php echo $this->Form->end(array('label' => 'OK', 'div' => false, 'class' => 'btn btn-default')); ?>
 						</div><!-- /.widget-main -->

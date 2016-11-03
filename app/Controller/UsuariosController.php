@@ -35,14 +35,21 @@ class UsuariosController extends AppController{
 		$sexos = $this->Sexo->find('list');
 		$perfils = $this->Perfil->find('list');
 
-		if ($this->request->is('post') && $this->request->data) {			
-			$this->request->data['Usuario']['senha'] = md5($this->request->data['Usuario']['senha']);
+		if ($this->request->is('post') && $this->request->data) {
+			
+			$usuarios = $this->Usuario->findAllByLogin($this->request->data['Usuario']['login']);
+			if(!empty($usuarios)){
+				$this->Session->setFlash('Login já existente', 'flash_danger');
 
-			if ($this->Usuario->save($this->request->data)) {
-				$this->Session->setFlash('Usuário adicionado com sucesso.', 'flash_success');
-				return $this->redirect(array('action' => 'index'));
-			} else {
+			}else{
+				$this->request->data['Usuario']['senha'] = md5($this->request->data['Usuario']['senha']);
+				if ($this->Usuario->save($this->request->data)) {
+					$this->Session->setFlash('Usuário adicionado com sucesso.', 'flash_success');
+					return $this->redirect(array('action' => 'index'));
+				}
+				else {
 				$this->Session->setFlash('Não foi possível registrar os dados do usuário.', 'flash_danger');
+				}
 			}
 		}
 
