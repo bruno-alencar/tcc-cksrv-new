@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 USER=`whoami`
 # # # Verifica se esta sendo executado como root # # #
 if [ $USER != "root" ]; then
@@ -48,11 +47,6 @@ echo "Por gentileza insira o IP desta máquina que deverá ser monitorada: "
 # Le o que foi digitado pelo usuário e atribui a uma variavel
 read ip
 
-# Da um find no id do servidor cadastrado em base
-serv_id=`mysql -h $ipserver -u $usermysql -p$pwmysql -e "select id from servidores where status_id=1 AND ip rlike '$ip'" --database $database |sed 1d`
-
-# Joga os dados da variavel em um arquivo
-echo $serv_id > id.txt
 
 # Cadastra o monitor no crontab
-echo '* * * * * /home/cksrv/monitor/monitor_client.sh' >> /etc/crontab
+echo '* * * * * /home/cksrv/monitor/monitor_server.sh' >> /etc/crontab
