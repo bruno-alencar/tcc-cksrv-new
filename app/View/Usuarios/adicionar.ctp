@@ -5,15 +5,15 @@
 </div>
 <?php echo $this->Session->flash(); ?>
 <div class="col-md-12 white-bg">
-<?php echo $this->Form->create('Usuario', array('admin' => true, 'novalidate', 'inputDefaults' => array('div' => array('class' => 'col-sm-6 form-group'))));?>
+<?php echo $this->Form->create('Usuario', array('novalidate', 'inputDefaults' => array('div' => array('class' => 'col-sm-6 form-group'))));?>
 
 	<div >
-		<h2><b><?php echo $this->action == 'admin_add' ? 'Novo Usuário' : 'Editar Usuário'?></b></h2>
+		<h2><b><?php echo $this->action == 'adicionar' ? 'Novo Usuário' : 'Editar Usuário'?></b></h2>
 	</div>
 	<hr>
 
 	<?php
-		if($this->action == 'admin_edit')
+		if($this->action == 'editar')
 			echo $this->Form->hidden('id',array('class' => 'col-sm-2', 'value' => $this->request->data['Usuario']['id']));
 	?>
 

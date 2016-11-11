@@ -72,7 +72,7 @@
 										$status = '#2eb82e'; // Verde
 									if($process['resultado'] >= $process['critical'] && $process['resultado'] < $process['warning'])
 										$status = '#ff8000'; // Laranja
-									if($process['resultado'] > $process['warning'])
+									if($process['resultado'] >= $process['warning'])
 										$status = '#cc0000'; // Vermelho
 
 									echo '<div class="col-sm-12" style="color:'.$status.'">';
@@ -92,7 +92,7 @@
 										$status = '#2eb82e'; // Verde
 									if($process_z['resultado'] >= $process_z['critical'] && $process_z['resultado'] < $process_z['warning'])
 										$status = '#ff8000'; // Laranja
-									if($process_z['resultado'] > $process_z['warning'])
+									if($process_z['resultado'] >= $process_z['warning'])
 										$status = '#cc0000'; // Vermelho
 
 									echo '<div class="col-sm-12" style="color:'.$status.'">';
@@ -112,7 +112,7 @@
 										$status = '#2eb82e'; // Verde
 									if($disk['resultado'] <= $disk['critical'] && $disk['resultado'] > $disk['warning'])
 										$status = '#ff8000'; // Laranja
-									if($disk['resultado'] < $disk['warning'])
+									if($disk['resultado'] <= $disk['warning'])
 										$status = '#cc0000'; // Vermelho
 
 									echo '<div class="col-sm-12" style="color:'.$status.'">';

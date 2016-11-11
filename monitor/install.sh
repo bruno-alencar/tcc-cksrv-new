@@ -3,7 +3,6 @@
 # Cria diretório mysql
 mkdir sql
 
-
 # Pergunta ao usuário o ip do servidor de monitoramento
 echo "Por gentileza ip do servidor de MYSQL: "
 # Le o que foi digitado pelo usuário e atribui a uma variavel

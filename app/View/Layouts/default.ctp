@@ -50,13 +50,13 @@
 							</div>
 						</li>
 						<li>
-							<?php echo $this->Html->link('<i class="fa fa-television"></i> <span class="nav-label">Monitorar</span>', array('admin' => false, 'controller' => 'monitoramento', 'action' => 'index'), array('escape' => false)) ?> 
+							<?php echo $this->Html->link('<i class="fa fa-television"></i> <span class="nav-label">Monitorar</span>', array('controller' => 'monitoramento', 'action' => 'index'), array('escape' => false)) ?> 
 						</li>
-						<?php echo AuthComponent::user('perfil_id') == 1 ? '<li>'.$this->Html->link('<i class="fa fa-server"></i> <span class="nav-label">Gerenciar Servidores</span>', array('admin' => true, 'controller' => 'servidores', 'action' => 'index'), array('escape' => false)).'</li>' : ''; ?> 
+						<?php echo AuthComponent::user('perfil_id') == 1 ? '<li>'.$this->Html->link('<i class="fa fa-server"></i> <span class="nav-label">Gerenciar Servidores</span>', array('controller' => 'servidores', 'action' => 'index'), array('escape' => false)).'</li>' : ''; ?> 
 						
-						<?php echo AuthComponent::user('perfil_id') == 1 ? '<li>'.$this->Html->link('<i class="fa fa-user"></i> <span class="nav-label">Gerenciar Usuários</span>', array('admin' => true, 'controller' => 'usuarios', 'action' => 'index'), array('escape' => false)).'</li>' : '';?>
+						<?php echo AuthComponent::user('perfil_id') == 1 ? '<li>'.$this->Html->link('<i class="fa fa-user"></i> <span class="nav-label">Gerenciar Usuários</span>', array('controller' => 'usuarios', 'action' => 'index'), array('escape' => false)).'</li>' : '';?>
 						<li>
-							<?php echo $this->Html->link('<i class="fa fa-dashboard"></i> <span class="nav-label">Gerenciar Dashboards</span>', array('admin' => true, 'controller' => 'dashboards', 'action' => 'index'), array('escape' => false)) ?> 
+							<?php echo $this->Html->link('<i class="fa fa-dashboard"></i> <span class="nav-label">Gerenciar Dashboards</span>', array('controller' => 'dashboards', 'action' => 'index'), array('escape' => false)) ?> 
 						</li>
 					</ul>
 				</div>
@@ -69,14 +69,14 @@
 						<div class="navbar-header col-md-1">
 							<a class="navbar-minimalize btn btn-default" href="#"><i class="fa fa-bars"></i> </a>	
 						</div>
-						<div class="col-md-9">
-							<h3 class="page-heading pull-right">Seja bem vindo <?php echo AuthComponent::user('nome') ?></h3>
+						<div class="col-md-10">
+							<h3 class="page-heading pull-right" style="margin-top: 15px; color: #26571E;">Seja bem vindo <?php echo AuthComponent::user('nome') ?></h3>
 						</div>
-						<ul class="pull-right navbar-top-links col-md-2">
+						<ul class="pull-right navbar-top-links col-md-1" style="display: inline-block;">
 							
 							<?php 
 							if(AuthComponent::user('id')): ?>
-								<li class="pull-right"><?php echo $this->Html->link('<i class="fa fa-sign-out"></i> Logout', array('admin' => false, 'controller' => 'usuarios', 'action' => 'logout'), array('escape' => false)) ?></li>
+								<li class="pull-right" style="margin-left:0"><?php echo $this->Html->link('<i class="fa fa-sign-out"></i> Logout', array('controller' => 'usuarios', 'action' => 'logout'), array('escape' => false)) ?></li>
 							<?php endif; ?>
 						</ul>
 					</nav>

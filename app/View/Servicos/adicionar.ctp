@@ -1,4 +1,4 @@
-<?php echo $this->Form->create('Servico', array('admin' => true, 'novalidate', 'inputDefaults' => array('div' => false, 'style'=>'margin-top:30px;')));?>
+<?php echo $this->Form->create('Servico', array('novalidate', 'inputDefaults' => array('div' => false, 'style'=>'margin-top:30px;')));?>
 <?php echo $this->Html->script('funcoes.js') ?>
 	<?php echo $this->Form->input('tipo_servico_id', array('empty' => 'Selecione o tipo de serviço', 'onchange' => "javascript:void(altera_texto_adicionar_servico(this.value))", 'label' => array('text' => false), 'div' => 'col-sm-12', 'style' => 'margin-bottom:30px;')); ?>
 

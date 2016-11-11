@@ -12,7 +12,7 @@ class DashboardsController extends AppController {
 
 	}
 
-	public function admin_index(){
+	public function index(){
 
 
 		$servidor = $this->Servidor->findById(1);
@@ -25,7 +25,7 @@ class DashboardsController extends AppController {
 	
 	}	
 
-	public function admin_view(){
+	public function visualizar(){
 
 		if($this->request->data){
 			$servico = $this->request->data['Dashboards']['tipo_servico_id'];

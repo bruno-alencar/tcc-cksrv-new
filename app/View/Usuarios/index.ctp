@@ -18,7 +18,7 @@
 </script>
 
 <br>
-<?= $this->Html->link("Novo usuário", array('admin' => true, 'controller' => 'usuarios' ,'action' => 'add'), array('class' => 'btn btn-green-default', 'style' => 'margin-left:20px;')) ?><br>
+<?= $this->Html->link("Novo usuário", array('controller' => 'usuarios' ,'action' => 'adicionar'), array('class' => 'btn btn-green-default', 'style' => 'margin-left:20px;')) ?><br>
 <br>
 
 <div class="crud-fundo-branco">
@@ -33,7 +33,7 @@
 		</tr>
 		<?php
 		foreach ($usuarios as $u) {
-			echo '<tr data-href="'.$this->Html->url(array('admin' => true, 'controller' => 'usuarios' ,'action' => 'edit', $u['Usuario']['id'])).'">';
+			echo '<tr data-href="'.$this->Html->url(array('controller' => 'usuarios' ,'action' => 'editar', $u['Usuario']['id'])).'">';
 				echo '<td>'.$u['Usuario']['nome'].'</td>';
 				echo '<td>'.$u['Usuario']['email'].'</td>';
 				echo '<td>'.$u['Usuario']['login'].'</td>';

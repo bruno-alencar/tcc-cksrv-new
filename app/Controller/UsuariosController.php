@@ -24,14 +24,14 @@ class UsuariosController extends AppController{
 	}
 
 
-	public function admin_index(){
+	public function index(){
 		$usuarios = $this->Usuario->find('all');
 
 		$this->set(compact('usuarios'));
 	}
 
 
-	public function admin_add(){
+	public function adicionar(){
 		$sexos = $this->Sexo->find('list');
 		$perfils = $this->Perfil->find('list');
 
@@ -57,7 +57,7 @@ class UsuariosController extends AppController{
 	}
 
 
-	public function admin_edit($usuario_id){
+	public function editar($usuario_id){
 		$sexos = $this->Sexo->find('list');
 		$perfils = $this->Perfil->find('list');
 
@@ -76,10 +76,10 @@ class UsuariosController extends AppController{
 		$this->request->data = $this->Usuario->read();
 
 		$this->set(compact('sexos', 'perfils')); 
-		$this->render('admin_add');
+		$this->render('adicionar');
 	}
 
-	public function admin_altera_status_usuario_ativo_inativo($usuario_id){
+	public function altera_status_usuario_ativo_inativo($usuario_id){
 		$this->autoRender = false;
 
 		$this->Usuario->id = $usuario_id;

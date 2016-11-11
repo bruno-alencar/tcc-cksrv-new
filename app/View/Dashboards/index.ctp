@@ -19,7 +19,7 @@
 </div>
     
             
-<?php echo $this->Form->create('Dashboards', array('admin' => true, 'novalidate','controller' => 'dashboards', 'url' => 'view', 'inputDefaults' => array('div' => array('class' => 'col-sm-12 form-group'))));?>
+<?php echo $this->Form->create('Dashboards', array('novalidate','controller' => 'dashboards', 'url' => 'visualizar', 'inputDefaults' => array('div' => array('class' => 'col-sm-12 form-group'))));?>
 
 <div class="col-sm-3">
 

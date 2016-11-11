@@ -147,14 +147,14 @@ function SmoothlyMenu() {
 
 function altera_status_usuario_ativo_inativo(usuario_id){
 	$.post(
-		cakebase+'admin/usuarios/altera_status_usuario_ativo_inativo/'+usuario_id,
+		cakebase+'usuarios/altera_status_usuario_ativo_inativo/'+usuario_id,
 		function(data){}
 		);
 }
 
 function altera_status_servidor_ativo_inativo(servidor_id){
 	$.post(
-		cakebase+'admin/servidores/altera_status_servidor_ativo_inativo/'+servidor_id,
+		cakebase+'servidores/altera_status_servidor_ativo_inativo/'+servidor_id,
 		function(data){}
 		);
 }
@@ -165,7 +165,7 @@ function testar_conexao(){
 	ip = $('#ip').val();
 
 	$.post(
-		cakebase+'admin/servidores/testar_conexao/'+usuario+'/'+senha+'/'+ip,
+		cakebase+'servidores/testar_conexao/'+usuario+'/'+senha+'/'+ip,
 			function(data){
 				console.log(data);
 			}
@@ -193,9 +193,9 @@ function altera_texto_adicionar_servico(servico_id){
 	}
 }
 
-function delete_servico(servico_id){
+function deletar_servico(servico_id){
 	$.post(
-		cakebase+'admin/servicos/delete/'+servico_id,
+		cakebase+'servicos/deletar/'+servico_id,
 			function(data){
 				window.location.reload();
 			}

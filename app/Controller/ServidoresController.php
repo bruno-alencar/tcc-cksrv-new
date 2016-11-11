@@ -7,15 +7,15 @@ class ServidoresController extends AppController {
 		$this->loadModel('TipoServico');
 	}
 
-	public function admin_index(){
+	public function index(){
 		// Busca todos os servidores
 		$servidores = $this->Servidor->find('all');
 
-		// Joga a variavel na view
+		// Joga a variavel na visualizar
 		$this->set(compact('servidores'));
 	}
 
-	public function admin_add(){
+	public function adicionar(){
 		// Entra caso seja post
 		if ($this->request->is('post') && $this->request->data) {
 
@@ -34,8 +34,8 @@ class ServidoresController extends AppController {
 
 					// Exibe mensagem de sucesso
 					$this->Session->setFlash('Servidor adicionado com sucesso.', 'flash_success');
-					// Redireciona para a view
-					return $this->redirect(array('action' => 'view', $this->Servidor->id));
+					// Redireciona para a visualizar
+					return $this->redirect(array('action' => 'visualizar', $this->Servidor->id));
 				} else {
 				// Exibe mensagem de erro
 					$this->Session->setFlash('Não foi possível registrar os dados do servidor.', 'flash_danger');
@@ -45,7 +45,7 @@ class ServidoresController extends AppController {
 		}
 	}
 
-	public function admin_view($servidor_id = null){
+	public function editar($servidor_id = null){
 		// Entra caso seja post
 		if ($this->request->is(array('post', 'put'))) {
 			// Salva os dados do servidor
@@ -71,18 +71,18 @@ class ServidoresController extends AppController {
 
 		// define id para servidor
 		$this->Servidor->id = $servidor_id;
-		// busca dados e joga na view
+		// busca dados e joga na visualizar
 		$this->request->data = $this->Servidor->read();
 		$this->set(compact('tipoServico')); 
 	}
 
-	public function admin_altera_status_servidor_ativo_inativo($servidor_id){
+	public function altera_status_servidor_ativo_inativo($servidor_id){
 		// Evita que o layout seja carregado
 		$this->autoRender = false;
 
 		// define id para servidor
 		$this->Servidor->id = $servidor_id;
-		// busca dados e joga na view
+		// busca dados e joga na visualizar
 		$server = $this->Servidor->read();
 
 		// Executa ternario com o status do servidor e atribui a uma váriavel que define ativo ou nao

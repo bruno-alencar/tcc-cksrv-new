@@ -5,20 +5,20 @@
 </div>
 <?php echo $this->Session->flash(); ?>
 <div class="col-md-12 white-bg">
-<?php echo $this->Form->create('Servidor', array('admin' => true, 'novalidate', 'inputDefaults' => array('div' => array('class' => 'col-sm-6 form-group'))));?>
+<?php echo $this->Form->create('Servidor', array('novalidate', 'inputDefaults' => array('div' => array('class' => 'col-sm-6 form-group'))));?>
 
 	<div >
-		<h2><b><?php echo $this->action == 'admin_add' ? 'Novo Servidor' : 'Editar Servidor'?></b></h2>
+		<h2><b><?php echo $this->action == 'adicionar' ? 'Novo Servidor' : 'Editar Servidor'?></b></h2>
 	</div>
 	<hr>
 
 	<?php
-		if($this->action == 'admin_edit')
+		if($this->action == 'editar')
 			echo $this->Form->hidden('id',array('value' => $this->request->data['Usuario']['id']));
 	?>
 
 	<?php
-		if($this->action == 'admin_add'){
+		if($this->action == 'adicionar'){
 			echo $this->Form->hidden('Servico.tipo_servico_id',array('value' => 1));
 			echo $this->Form->hidden('Servico.critical',array('value' => 0));
 			echo $this->Form->hidden('Servico.warning',array('value' => 0));

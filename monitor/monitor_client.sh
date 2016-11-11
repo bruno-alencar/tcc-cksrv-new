@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Pega caminho do monitor
-CAMINHO_MONITOR=`pwd`
-
 SERVIDOR_ID=`cat $CAMINHO_MONITOR/id.txt`
 # usuario sql
 SQL_U=`cat $CAMINHO_MONITOR/sql/mysql_user.txt`
