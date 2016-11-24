@@ -41,6 +41,8 @@ for i in "${arr[@]}"; do
 		# Filtra o campo Resultado para facil manuseio
 		RESULTADO=`echo $servico |cut -d' ' -f8`
 
+		CRITICAL=`echo $servico |cut -d' ' -f5`
+
 		# # # Caso o tipo do serviço for PING # # #
 		if [ $TIPO_SERVICO -eq 1 ]; then
 
@@ -103,12 +105,12 @@ for i in "${arr[@]}"; do
 
 				done
 				php $CAMINHO_MONITOR/envio.php $n
-				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 
 			if [ $RESULTADO -ge $CRITICAL ]; then
 				if [ $RESULTADO -lt $WARNING ]; then
-					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 				fi
 			fi
 		fi
@@ -135,12 +137,12 @@ for i in "${arr[@]}"; do
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Quantidade de usuários - $i Quantidade de usuários na máquina $i está acima do esperado."
 				done
 				php $CAMINHO_MONITOR/envio.php $n
-				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 
 			if [ $RESULTADO -ge $CRITICAL ]; then
 				if [ $RESULTADO -lt $WARNING ]; then
-					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 				fi
 			fi
 		fi
@@ -168,11 +170,11 @@ for i in "${arr[@]}"; do
 					
 				done
 				php $CAMINHO_MONITOR/envio.php $n
-				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 			if [ $RESULTADO -ge $CRITICAL ]; then
 				if [ $RESULTADO -lt $WARNING ]; then
-					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 				fi
 			fi
 		fi
@@ -199,11 +201,11 @@ for i in "${arr[@]}"; do
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Quantidade de processos Zombie - $i Quantidade de processos Zombie da máquina $i está acima do esperado."
 				done
 				php $CAMINHO_MONITOR/envio.php $n
-				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 			if [ $RESULTADO -ge $CRITICAL ]; then
 				if [ $RESULTADO -lt $WARNING ]; then
-					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 				fi
 			fi
 		fi
@@ -230,11 +232,11 @@ for i in "${arr[@]}"; do
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Espaço em disco insuficiente - $i O Espaço disponível na partição $PARTICAO do servidor $i está abaixo do esperado."
 				done
 				php $CAMINHO_MONITOR/envio.php $n
-				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 			if [ $RESULTADO -ge $CRITICAL ]; then
 				if [ $RESULTADO -lt $WARNING ]; then
-					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 				fi
 			fi
 		fi
