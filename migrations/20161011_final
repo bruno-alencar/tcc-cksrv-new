@@ -26,8 +26,6 @@ CREATE TABLE `log_servicos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `servico_id` int(11) NOT NULL,
   `resultado` int(5) NOT NULL,
-  `status_servidor` int(2) DEFAULT NULL,
-  `status_id` int(2) NOT NULL DEFAULT '1',
   `flg_critical` INT(5) DEFAULT NULL,
   `flg_warning` INT(5) DEFAULT NULL,
   `ip` VARCHAR(45) DEFAULT NULL,

@@ -30,6 +30,10 @@ class DashboardsController extends AppController {
 		if($this->request->data){
 			$servico = $this->request->data['Dashboards']['tipo_servico_id'];
 			$periodo = $this->request->data['Dashboards']['periodo_dash_id'];
+
+			if(empty($servico) || empty($periodo)){
+				
+			}
 		}
 
 		if($periodo == 1){

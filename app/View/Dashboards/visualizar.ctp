@@ -247,9 +247,10 @@ $(function () {
            
                             //$qtdeBarra = $ta['0']['qtde'];
                             $dataCritical = $ta['LogServico']['modified'];
+                            $newDateCritical = date('Y-m-d', strtotime($dataCritical));
             ?>                
 
-                ['<?php echo $dataCritical;?>'],
+                ['<?php echo $newDateCritical;?>'],
 
             <?php } ?>    
 
@@ -313,9 +314,10 @@ $(function () {
            
                             //$qtdeBarra = $ta['0']['qtde'];
                             $dataWarning = $ta['LogServico']['modified'];
+                            $newDateWarning = date('Y-m-d', strtotime($dataWarning));
             ?>                
 
-                ['<?php echo $dataWarning;?>'],
+                ['<?php echo $newDateWarning;?>'],
 
             <?php } ?>    
 
