@@ -17,7 +17,7 @@ class DashboardsController extends AppController {
 
 		$servidor = $this->Servidor->findById(1);
 
-		$tipoServicos = $this->TipoServico->find('list', array('conditions' => 'TipoServico.id > 0'));
+		$tipoServicos = $this->TipoServico->find('list', array('conditions' => 'TipoServico.id > 1'));
 
 		$nomeServico = $this->TipoServico->find('list');	
 
@@ -31,23 +31,23 @@ class DashboardsController extends AppController {
 			$servico = $this->request->data['Dashboards']['tipo_servico_id'];
 			$periodo = $this->request->data['Dashboards']['periodo_dash_id'];
 
-			if(empty($servico) || empty($periodo)){
-				
+			if(empty($periodo)){
+				$periodo = 1;	
 			}
 		}
 
+
 		if($periodo == 1){
+			$tempo = date('Y-m-d');
+			$tempo = $tempo.' 00:00:00';
+		}
+		if($periodo == 2){
 			$timestamp = strtotime("-1 month");
 			$tempo = date('Y-m-d', $timestamp);
 			$tempo = $tempo.' 00:00:00';
 		}
-		if($periodo == 2){
-			$timestamp = strtotime("-3 month");
-			$tempo = date('Y-m-d', $timestamp);
-			$tempo = $tempo.' 00:00:00';
-		}
 		if($periodo == 3){
-			$timestamp = strtotime("2016-01-01");
+			$timestamp = strtotime("-3 month");
 			$tempo = date('Y-m-d', $timestamp);
 			$tempo = $tempo.' 00:00:00';
 		}

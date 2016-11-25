@@ -26,15 +26,16 @@
 </div>
 
 <div class="col-sm-3">
-    <?php echo $this->Form->input('tipo_servico_id', array('empty' => 'Selecione o tipo de serviço', 'onchange' => "javascript:void(mostra_texto_servico_dash(this.value))", 'label' => array('text' => false), 'class' => 'form-control')); ?>
+    <?php echo $this->Form->input('tipo_servico_id', array('empty' => 'Selecione o tipo de serviço', 'onchange' => "javascript:void(mostra_texto_servico_dash(this.value))", 'label' => array('text' => false), 'id' => 'tipo_servico_id' ,'class' => 'form-control')); ?>
 </div>
 
 
 <div class="col-sm-3">
-        <?php echo $this->Form->input('periodo_dash_id', array('options' => array('1' => 'Ultimo Mes',
-                 '2' => '3 Meses',
-                 '3' => 'Todo o Periodo'
-     ),'label' => array('text' => false), 'empty' => 'Selecione o Periodo'));?>
+        <?php echo $this->Form->input('periodo_dash_id', array('options' => array(
+                 '1' => 'Hoje',
+                 '2' => 'Ultimo Mes',
+                 '3' => '3 Meses'
+     ),'label' => array('text' => false), 'id' => 'periodo_dash_id', 'empty' => 'Selecione o Periodo'));?>
 
 </div>
 
