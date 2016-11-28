@@ -40,7 +40,6 @@ CREATE TABLE `log_servicos` (
 
 LOCK TABLES `log_servicos` WRITE;
 /*!40000 ALTER TABLE `log_servicos` DISABLE KEYS */;
-INSERT INTO `log_servicos` VALUES (1,8,1,1,1);
 /*!40000 ALTER TABLE `log_servicos` ENABLE KEYS */;
 UNLOCK TABLES;
 
