@@ -30,7 +30,8 @@
 		<div class="col-sm-12 form-group">
 			<div class="col-sm-6">
 				<?php echo $this->Form->input('ddd', array('class' => 'col-sm-2', 'placeholder' => 'DDD', 'type' => 'text', 'label' => array('text' => 'Celular:', 'class' => 'col-sm-2'), 'div' => false));?>
-				<?php echo $this->Form->input('celular', array('class' => 'col-sm-5', 'placeholder' => 'Celular', 'style' => 'margin-left:5px;', 'type' => 'text', 'label' => false, 'div' => false));?>
+
+				<?php echo $this->Form->input('celular', array('class' => 'col-sm-4', 'placeholder' => 'Celular', 'style' => 'margin-left:5px;', 'type' => 'text', 'label' => false, 'div' => false));?>
 			</div>
 		</div>
 

@@ -9,12 +9,12 @@ class Servico extends AppModel {
 		)
 	);
 
-	public $hasMany = array(
+/*	public $hasMany = array(
         'LogServico' => array(
-            'foreign_key' => 'id'
+            'foreign_key' => 'ip'
          )
     );
-	
+*/	
 }
 ?>
 

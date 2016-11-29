@@ -35,7 +35,7 @@ class ServidoresController extends AppController {
 					// Exibe mensagem de sucesso
 					$this->Session->setFlash('Servidor adicionado com sucesso.', 'flash_success');
 					// Redireciona para a visualizar
-					return $this->redirect(array('action' => 'visualizar', $this->Servidor->id));
+					return $this->redirect(array('action' => 'index', $this->Servidor->id));
 				} else {
 				// Exibe mensagem de erro
 					$this->Session->setFlash('Não foi possível registrar os dados do servidor.', 'flash_danger');
