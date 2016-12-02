@@ -1,2 +1,0 @@
-ALTER TABLE `cksrv`.`servicos` 
-ADD COLUMN `ip` VARCHAR(45) NOT NULL COMMENT '' AFTER `servidor_id`;

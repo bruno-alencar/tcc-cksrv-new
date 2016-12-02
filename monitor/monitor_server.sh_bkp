@@ -16,7 +16,7 @@ SQL_DATABASE=`cat /var/www/cksrv-new/monitor/sql/mysql_database.txt`
 
 
 # Busca todos os servidores ativos no sistema.
-serv=`mysql --login-path=cksrv -e "select ip from servidores where status_id=1" --database $SQL_DATABASE |sed 1d`
+serv=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select ip from servidores where status_id=1" --database $SQL_DATABASE |sed 1d`
 # Transforma o resultado da busca em um array
 arr=($serv)
 
@@ -24,14 +24,14 @@ arr=($serv)
 for i in "${arr[@]}"; do 
 
 	# Busca na base todos os serviços que devem ser monitorados pelo sistema do servidor em questão
-	ids=`mysql --login-path=cksrv -e "select id from servicos where ip rlike '$i'" --database $SQL_DATABASE |sed 1d`
+	ids=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from servicos where ip rlike '$i'" --database $SQL_DATABASE |sed 1d`
 	# Transforma o resultado da busca em um array
 	arr=($ids)
 
 	# Executa um foreach de todos os serviços relacionados ao servidor
 	for n in "${arr[@]}"; do 
 		# Busca os dados do servico individualmente
-		servico=`mysql --login-path=cksrv -e "select * from servicos where id = $n" --database $SQL_DATABASE |sed 1d`
+		servico=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select * from servicos where id = $n" --database $SQL_DATABASE |sed 1d`
 		# Filtra o id para facil manuseio
 		ID=`echo $servico |cut -d' ' -f1`
 		# Filtra o Tipo do serviço para facil manuseio
@@ -55,20 +55,20 @@ for i in "${arr[@]}"; do
 			# Testa se o comando foi executado com sucesso
 			if [ $? -eq 0 ]; then
 				# Sucesso, da um insert na base com os dados de sucesso
-				mysql --login-path=cksrv -e "UPDATE servicos SET status_servidor=1, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET status_servidor=1, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
 			# Caso não tenha sido executado com sucesso
 			else
 				# Falha, da um insert na base com os dados de falha na comunicação
-				mysql --login-path=cksrv -e "UPDATE servicos SET status_servidor=0, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "UPDATE servicos SET status_servidor=0, modified='$MODIFIED' where id=$ID;" --database $SQL_DATABASE
 
 				# # # Envia alerta para todos os usuários # # #
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql --login-path=cksrv -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql --login-path=cksrv -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio
@@ -88,12 +88,12 @@ for i in "${arr[@]}"; do
 			if [ $RESULTADO -ge $WARNING ]; then
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql --login-path=cksrv -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql --login-path=cksrv -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio
@@ -105,12 +105,12 @@ for i in "${arr[@]}"; do
 
 				done
 				php $CAMINHO_MONITOR/envio.php $n
-				mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 
 			if [ $RESULTADO -ge $CRITICAL ]; then
 				if [ $RESULTADO -lt $WARNING ]; then
-					mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 				fi
 			fi
 		fi
@@ -121,12 +121,12 @@ for i in "${arr[@]}"; do
 			if [ $RESULTADO -ge $WARNING ]; then
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql --login-path=cksrv -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql --login-path=cksrv -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio
@@ -137,12 +137,12 @@ for i in "${arr[@]}"; do
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Quantidade de usuários - $i Quantidade de usuários na máquina $i está acima do esperado."
 				done
 				php $CAMINHO_MONITOR/envio.php $n
-				mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 
 			if [ $RESULTADO -ge $CRITICAL ]; then
 				if [ $RESULTADO -lt $WARNING ]; then
-					mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 				fi
 			fi
 		fi
@@ -153,12 +153,12 @@ for i in "${arr[@]}"; do
 			if [ $RESULTADO -ge $WARNING ]; then
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql --login-path=cksrv -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql --login-path=cksrv -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio
@@ -170,11 +170,11 @@ for i in "${arr[@]}"; do
 					
 				done
 				php $CAMINHO_MONITOR/envio.php $n
-				mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 			if [ $RESULTADO -ge $CRITICAL ]; then
 				if [ $RESULTADO -lt $WARNING ]; then
-					mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 				fi
 			fi
 		fi
@@ -185,12 +185,12 @@ for i in "${arr[@]}"; do
 			if [ $RESULTADO -ge $WARNING ]; then
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql --login-path=cksrv -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql --login-path=cksrv -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio
@@ -201,11 +201,11 @@ for i in "${arr[@]}"; do
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Quantidade de processos Zombie - $i Quantidade de processos Zombie da máquina $i está acima do esperado."
 				done
 				php $CAMINHO_MONITOR/envio.php $n
-				mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 			if [ $RESULTADO -ge $CRITICAL ]; then
 				if [ $RESULTADO -lt $WARNING ]; then
-					mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 				fi
 			fi
 		fi
@@ -216,12 +216,12 @@ for i in "${arr[@]}"; do
 			if [ $RESULTADO -ge $WARNING ]; then
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
-				usuarios=`mysql --login-path=cksrv -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
+				usuarios=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
 				# Transforma o resultado da busca em um array
 				arr=($usuarios)
 				for u in "${arr[@]}"; do 
 					# Busca os dados do usuário um a um
-					usuario=`mysql --login-path=cksrv -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
+					usuario=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select email,ddd,celular from usuarios where id=$u" --database $SQL_DATABASE |sed 1d`
 					# Filtra o id para facil manuseio
 					EMAIL=`echo $usuario |cut -d' ' -f1`
 					# Filtra o Tipo do serviço para facil manuseio
@@ -232,11 +232,11 @@ for i in "${arr[@]}"; do
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Espaço em disco insuficiente - $i O Espaço disponível na partição $PARTICAO do servidor $i está abaixo do esperado."
 				done
 				php $CAMINHO_MONITOR/envio.php $n
-				mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+				mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 			if [ $RESULTADO -ge $CRITICAL ]; then
 				if [ $RESULTADO -lt $WARNING ]; then
-					mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
+					mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=0,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 				fi
 			fi
 		fi

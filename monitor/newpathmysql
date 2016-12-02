@@ -1,0 +1,8 @@
+mysql_config_editor set --login-path=client  --host=localhost --user=root --password
+
+mysql --login-path=cksrv
+
+
+https://dev.mysql.com/doc/refman/5.6/en/mysql-config-editor.html
+
+http://stackoverflow.com/questions/17827340/protect-the-password-when-using-mysql-in-an-unattended-bash-script

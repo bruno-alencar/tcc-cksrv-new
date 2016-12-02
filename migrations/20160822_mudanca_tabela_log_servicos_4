@@ -1,2 +1,0 @@
-ALTER TABLE `cksrv`.`log_servicos` 
-CHANGE COLUMN `resultado` `resultado` INT(5) NOT NULL COMMENT '' ;

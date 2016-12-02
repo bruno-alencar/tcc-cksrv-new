@@ -16,66 +16,57 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `log_servidores`
+-- Table structure for table `log_servicos`
 --
 
-DROP TABLE IF EXISTS `log_servidores`;
+DROP TABLE IF EXISTS `log_servicos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `log_servidores` (
+CREATE TABLE `log_servicos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `servidor_id` int(11) NOT NULL,
-  `usuario_id` int(11) DEFAULT NULL,
-  `descricao` text,
-  `created` datetime DEFAULT NULL,
-  `status` int(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`),
-  KEY `lgs_serv_idx` (`servidor_id`),
-  KEY `lgs-user_idx` (`usuario_id`),
-  CONSTRAINT `lgs-user` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `lgs_serv` FOREIGN KEY (`servidor_id`) REFERENCES `servidores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=ucs2;
+  `servico_id` int(11) NOT NULL,
+  `resultado` int(5) NOT NULL,
+  `status_servidor` int(2) DEFAULT NULL,
+  `status_id` int(2) NOT NULL DEFAULT '1',
+  `flg_critical` INT(5) DEFAULT NULL,
+  `flg_warning` INT(5) DEFAULT NULL,
+  `ip` VARCHAR(45) DEFAULT NULL,
+  `modified` DATETIME DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `log_servidores`
---
-
-LOCK TABLES `log_servidores` WRITE;
-/*!40000 ALTER TABLE `log_servidores` DISABLE KEYS */;
-/*!40000 ALTER TABLE `log_servidores` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `log_usuarios`
 --
 
-DROP TABLE IF EXISTS `log_usuarios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `log_usuarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `usuario_id` int(11) NOT NULL,
-  `servidor_id` int(11) DEFAULT NULL,
-  `descricao` text,
-  `created` datetime DEFAULT NULL,
-  `status` int(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`),
-  KEY `LOG_user_idx` (`usuario_id`),
-  KEY `LOG_server_user_idx` (`servidor_id`),
-  CONSTRAINT `LOG_server_user` FOREIGN KEY (`servidor_id`) REFERENCES `servidores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `LOG_user` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=ucs2;
+-- DROP TABLE IF EXISTS `log_usuarios`;
+-- /*!40101 SET @saved_cs_client     = @@character_set_client */;
+-- /*!40101 SET character_set_client = utf8 */;
+-- CREATE TABLE `log_usuarios` (
+--   `id` int(11) NOT NULL AUTO_INCREMENT,
+--   `usuario_id` int(11) NOT NULL,
+--   `servidor_id` int(11) DEFAULT NULL,
+--   `descricao` text,
+--   `created` datetime DEFAULT NULL,
+--   `status_id` int(2) NOT NULL DEFAULT '1',
+--   PRIMARY KEY (`id`),
+--   KEY `LOG_user_idx` (`usuario_id`),
+--   KEY `LOG_server_user_idx` (`servidor_id`),
+--   CONSTRAINT `LOG_server_user` FOREIGN KEY (`servidor_id`) REFERENCES `servidores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+--   CONSTRAINT `LOG_user` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+-- ) ENGINE=InnoDB DEFAULT CHARSET=ucs2;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `log_usuarios`
 --
 
-LOCK TABLES `log_usuarios` WRITE;
-/*!40000 ALTER TABLE `log_usuarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `log_usuarios` ENABLE KEYS */;
-UNLOCK TABLES;
+-- LOCK TABLES `log_usuarios` WRITE;
+-- !40000 ALTER TABLE `log_usuarios` DISABLE KEYS ;
+-- /*!40000 ALTER TABLE `log_usuarios` ENABLE KEYS */;
+-- UNLOCK TABLES;
 
 --
 -- Table structure for table `perfis`
@@ -102,6 +93,31 @@ INSERT INTO `perfis` VALUES (1,'Administrador'),(2,'Usuario');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `servicos`
+--
+
+DROP TABLE IF EXISTS `servicos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `servicos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo_servico_id` int(11) NOT NULL,
+  `servidor_id` int(11) NOT NULL,
+  `ip` varchar(45) DEFAULT NULL,
+  `critical` int(5) NOT NULL,
+  `warning` int(5) NOT NULL,
+  `particao` varchar(45) DEFAULT NULL,
+  `resultado` int(5) DEFAULT '0',
+  `status_servidor` int(2) DEFAULT '0',
+  `modified` datetime DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `status_id` int(2) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+--
 -- Table structure for table `servidores`
 --
 
@@ -115,21 +131,12 @@ CREATE TABLE `servidores` (
   `usuario` varchar(20) NOT NULL,
   `senha` varchar(20) NOT NULL,
   `detalhes` text,
-  `detalhes_so` varchar(45) DEFAULT NULL,
-  `status_id` int(1) NOT NULL DEFAULT '1',
+  `detalhes_so` varchar(45) NOT NULL,
+  `status_id` int(2) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=ucs2;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=ucs2;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `servidores`
---
-
-LOCK TABLES `servidores` WRITE;
-/*!40000 ALTER TABLE `servidores` DISABLE KEYS */;
-INSERT INTO `servidores` VALUES (1,'LocalHost','127.0.0.1','allan','allan',NULL,NULL,1),(2,'Mac','127.0.0.5','allan','allan',NULL,NULL,0),(3,'Henrique','192.168.2.214','allan','allan',NULL,NULL,1),(4,'Sica','192.168.2.216','sica','sica',NULL,NULL,1),(5,'Teste','192.168.2.214','teste','teste',NULL,'Linux',0);
-/*!40000 ALTER TABLE `servidores` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `sexos`
@@ -163,11 +170,11 @@ DROP TABLE IF EXISTS `status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `status` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(2) NOT NULL,
   `descricao` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -178,6 +185,31 @@ LOCK TABLES `status` WRITE;
 /*!40000 ALTER TABLE `status` DISABLE KEYS */;
 INSERT INTO `status` VALUES (1,'Inativo'),(2,'Ativo'),(3,'Finalizado');
 /*!40000 ALTER TABLE `status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tipo_servicos`
+--
+
+DROP TABLE IF EXISTS `tipo_servicos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tipo_servicos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `servico` varchar(100) NOT NULL,
+  `status_id` int(2) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tipo_servicos`
+--
+
+LOCK TABLES `tipo_servicos` WRITE;
+/*!40000 ALTER TABLE `tipo_servicos` DISABLE KEYS */;
+INSERT INTO `tipo_servicos` VALUES (1,'Ping',1),(2,'Load',1),(3,'Usuários conectados',1),(4,'Quantidade de processos',1),(5,'Processos Zombies',1),(6,'Espaço em disco',1);
+/*!40000 ALTER TABLE `tipo_servicos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -197,7 +229,7 @@ CREATE TABLE `usuarios` (
   `sexo_id` int(1) NOT NULL,
   `ddd` int(2) NOT NULL,
   `celular` int(9) NOT NULL,
-  `status_id` int(1) NOT NULL DEFAULT '1',
+  `status_id` int(2) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=ucs2;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -208,7 +240,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (13,'allan','allan','Allan Gustavo','allan.gustavo@cksrv.com',1,1,0,0,1),(14,'teste','teste','Teste','teste@teste.com.br',2,1,11,919191919,1);
+INSERT INTO `usuarios` VALUES (1,'admin','admin','Administrador','admin@cksrv.com',1,1,11,999999999,1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -221,4 +253,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-01  7:58:09
+-- Dump completed on 2016-08-24 19:12:53

@@ -1,0 +1,5 @@
+Sistema PHP 5.6 ou superior;
+Apache 2;
+MySQL 5 ou superior;
+Servidor Linux;
+Serviço de YowSup ativo e configurado.
