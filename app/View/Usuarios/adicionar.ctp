@@ -1,3 +1,10 @@
+<script>
+jQuery(function($){
+       $("#celular").mask("99999-9999");
+       $("#ddd").mask("(99)");
+});
+</script>
+
 <div class="col-md-12 page-heading bg-color-title-pagina">
 	<div class="row">
 		<h3>Gerenciar Usuários</h3>
@@ -29,8 +36,9 @@
 		
 		<div class="col-sm-12 form-group">
 			<div class="col-sm-6">
-				<?php echo $this->Form->input('ddd', array('class' => 'col-sm-2', 'placeholder' => 'DDD', 'type' => 'text', 'label' => array('text' => 'Celular:', 'class' => 'col-sm-2'), 'div' => false));?>
-				<?php echo $this->Form->input('celular', array('class' => 'col-sm-5', 'placeholder' => 'Celular', 'style' => 'margin-left:5px;', 'type' => 'text', 'label' => false, 'div' => false));?>
+				<?php echo $this->Form->input('ddd', array('class' => 'col-sm-2', 'placeholder' => 'DDD', 'type' => 'text', 'label' => array('text' => 'Celular:', 'class' => 'col-sm-2'),'id' => 'ddd' ,'div' => false));?>
+
+				<?php echo $this->Form->input('celular', array('class' => 'col-sm-4', 'placeholder' => 'Celular', 'style' => 'margin-left:5px;', 'type' => 'text', 'label' => false,'id' => 'celular' ,'div' => false));?>
 			</div>
 		</div>
 

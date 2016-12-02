@@ -42,6 +42,12 @@ class Usuario extends AppModel {
 			'rule' => 'email',
 			'message' => 'Insira um e-mail válido.'
 		),
+		'ddd' => array(
+			'notBlank' => array(
+				'rule' => 'notBlank',
+				'message' => 'Insira o ddd.'
+			),
+		),
 		'celular' => array(
 			'notBlank' => array(
 				'rule' => 'notBlank',
