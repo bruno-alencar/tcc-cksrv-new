@@ -15,7 +15,7 @@ echo "Por gentileza ip do servidor de MYSQL: "
 # Le o que foi digitado pelo usuário e atribui a uma variavel
 read ipserver
 # # Joga os dados da variável em um arquivo de texto
-echo $ipserver > sql/mysql_server.txt
+# echo $ipserver > sql/mysql_server.txt
 
 
 # Pergunta ao usuário o nome da base de dados
@@ -31,16 +31,16 @@ echo "Por gentileza insira o usuário do MYSQL: "
 # Le o que foi digitado pelo usuário e atribui a uma variavel
 read usermysql
 # # Joga os dados da variável em um arquivo de texto
-echo $usermysql > sql/mysql_user.txt
+# echo $usermysql > sql/mysql_user.txt
 
 
 # Pergunta ao usuário a senha do mysql
 echo "Por gentileza insira a senha do MYSQL: "
 # Le o que foi digitado pelo usuário e atribui a uma variavel
-read pwmysql
+# read pwmysql
 # # Joga os dados da variável em um arquivo de texto
-echo $pwmysql > sql/mysql_password.txt
-
+# echo $pwmysql > sql/mysql_password.txt
+mysql_config_editor set --login-path=cksrv  --host=$ipserver --user=$usermysql --password
 
 # Pergunta ao usuário o ip do servidor a ser monitorado
 echo "Por gentileza insira o IP desta máquina que deverá ser monitorada: "

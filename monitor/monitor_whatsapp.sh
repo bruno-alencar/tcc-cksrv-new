@@ -20,14 +20,14 @@ numero_telefone=`cat /home/bruno/lista.txt | awk '{print $4}'`
 
 
 # Busca todos os servidores ativos no sistema.
-serv=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select id from servicos where ip='$ip_servidor'" --database $SQL_DATABASE |sed 1d`
+serv=`mysql --login-path=cksrv -e "select id from servicos where ip='$ip_servidor'" --database $SQL_DATABASE |sed 1d`
 # Transforma o resultado da busca em um array
 arr=($serv)
 
 # Executa um foreach de todos os servidores
 for i in "${arr[@]}"; do 
 	# Busca todos dados do serviço
-	servico=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select * from servicos where id=$i" --database $SQL_DATABASE |sed 1d`
+	servico=`mysql --login-path=cksrv -e "select * from servicos where id=$i" --database $SQL_DATABASE |sed 1d`
 	ID=`echo $servico | awk '{print $1}'`
 	TIPO_SERVICO_ID=`echo $servico | awk '{print $2}'`
 	
@@ -35,7 +35,7 @@ for i in "${arr[@]}"; do
 	RESULTADO=`echo $servico | awk '{print $8}'`
 	STATUS_PING=`echo $servico | awk '{print $9}'`
 	
-	# tipo_servico=`mysql -h $SQL_SERVER -u $SQL_U -p$SQL_P -e "select servico from tipo_servicos where id=$TIPO_SERVICO_ID" --database $SQL_DATABASE |sed 1d`
+	# tipo_servico=`mysql --login-path=cksrv -e "select servico from tipo_servicos where id=$TIPO_SERVICO_ID" --database $SQL_DATABASE |sed 1d`
 	
 	# MENSAGEM='Serviço: '$tipo_servico
 	# echo $MENSAGEM
