@@ -1,7 +1,7 @@
 <script>
 jQuery(function($){
-       $("#celular").mask("99999-9999");
-       $("#ddd").mask("(99)");
+       $("#celular").mask("999999999");
+       $("#ddd").mask("99");
 });
 </script>
 
