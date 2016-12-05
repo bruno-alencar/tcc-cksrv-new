@@ -60,7 +60,7 @@
 
 									echo '<div class="col-sm-12" style="color:'.$status.'">';
 										echo '<div class="col-sm-5">';
-											echo '<p><i class="fa fa-user-times" style="margin-right:10px;"></i> Usuários Logados: '.$user['resultado'].'</p>';
+											echo '<p><i class="fa fa-user-times" style="margin-right:10px;"></i> Usuários Conectados: '.$user['resultado'].'</p>';
 										echo '</div>';
 										echo '<div class="col-sm-7">';
 											echo '<p>Ultima Verificação: '.dataBr($user['modified']).'</p>';
