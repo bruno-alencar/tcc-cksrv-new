@@ -62,8 +62,6 @@ class UsuariosController extends AppController{
 		$perfils = $this->Perfil->find('list');
 
 		if ($this->request->is(array('post', 'put'))) {
-			$this->request->data['Usuario']['senha'] = md5($this->request->data['Usuario']['senha']);
-
 			if ($this->Usuario->save($this->request->data)) {
 				$this->Session->setFlash('Usuário atualizado com sucesso.', 'flash_success');
 				return $this->redirect(array('action' => 'index'));
