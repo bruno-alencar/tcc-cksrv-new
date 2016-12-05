@@ -8,15 +8,16 @@ class UsuariosController extends AppController{
 	}
 
 	public function login(){
-				if($this->request->is('post')){
-						$this->request->data['Usuario']['senha'] = md5($this->request->data['Usuario']['senha']);
+		$this->layout = false;
+		if($this->request->is('post')){
+			$this->request->data['Usuario']['senha'] = md5($this->request->data['Usuario']['senha']);
 
-						if ($this->Auth->login()) {
-								return $this->redirect($this->Auth->redirect());
-						} else {
-							$this->Session->setFlash('Usuário ou senha inválido(s)', 'flash_danger');
-						}
-				}
+			if ($this->Auth->login()) {
+					return $this->redirect($this->Auth->redirect());
+			} else {
+				$this->Session->setFlash('Usuário ou senha inválido(s)', 'flash_danger');
+			}
+		}
 	}
 
 	public function logout() {
