@@ -5,6 +5,7 @@
 				<div id="login-box" class="login-box visible widget-box no-border">
 					<div class="widget-body">
 						<div class="widget-main">
+
 							<h4 class="header blue lighter bigger">
 								<i class="ace-icon fa fa-coffee green"></i>
 								Login
@@ -19,6 +20,8 @@
 							    <label>Senha</label>
 							    <input name="data[Usuario][senha]" type="password" class="form-control" placeholder="Senha">
 							  </div>
+							  <?php echo $this->Session->flash(); ?>
+							  <br>
 							<?php echo $this->Form->end(array('label' => 'OK', 'div' => false, 'class' => 'btn btn-default')); ?>
 						</div><!-- /.widget-main -->
 					</div><!-- /.widget-body -->

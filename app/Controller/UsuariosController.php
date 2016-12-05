@@ -14,7 +14,7 @@ class UsuariosController extends AppController{
 						if ($this->Auth->login()) {
 								return $this->redirect($this->Auth->redirect());
 						} else {
-							$this->Session->setFlash('Usuário ou senha inválido(s)');
+							$this->Session->setFlash('Usuário ou senha inválido(s)', 'flash_danger');
 						}
 				}
 	}
