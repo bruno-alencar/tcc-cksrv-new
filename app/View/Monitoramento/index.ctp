@@ -6,6 +6,9 @@
 
 <div class="row lista-servidores">
 	<?php
+
+	if (!empty($servidor)){
+
 		foreach ($servicos as $s):
 			if($servidor[$s[1]['servidor_id']]['Servidor']['status_id'] == 1):
 				echo '<div class="col-lg-4 lista-servidores">';
@@ -134,5 +137,8 @@
 				echo '</div>';
 			endif;
 		endforeach;
+	}else{
+		echo "<b>Nenhum servidor cadastrado</b>";
+	}
 	?>	
 </div>
