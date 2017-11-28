@@ -60,7 +60,7 @@ for i in "${arr[@]}"; do
 	# # # Caso o tipo do serviço for espaço em disco # # #
 	if [ $TIPO_SERVICO -eq 6 ]; then
 
-		DISK=`df |grep $PARTICAO | awk '{print $3}'`
+		DISK=`df |grep $PARTICAO | awk '{print $4}'`
 		MAX_SIZE=`df |grep $PARTICAO | awk '{print $2}'`
 
 		X=$(($DISK * 100))

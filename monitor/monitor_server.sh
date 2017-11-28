@@ -78,7 +78,8 @@ for i in "${arr[@]}"; do
 
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Sem comunicação com o servidor $i"
 				done
-				php $CAMINHO_MONITOR/envio.php $n
+				sleep 5
+				sudo php /var/www/cksrv-new/monitor/envio.php $n
 			fi
 		fi
 
@@ -104,7 +105,7 @@ for i in "${arr[@]}"; do
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Load da máquina - $i Load da máquina $i está acima do esperado."
 
 				done
-				php $CAMINHO_MONITOR/envio.php $n
+				php /var/www/cksrv-new/monitor/envio.php $n
 				mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 
@@ -136,7 +137,7 @@ for i in "${arr[@]}"; do
 
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Quantidade de usuários - $i Quantidade de usuários na máquina $i está acima do esperado."
 				done
-				php $CAMINHO_MONITOR/envio.php $n
+				php /var/www/cksrv-new/monitor/envio.php $n
 				mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 
@@ -169,7 +170,7 @@ for i in "${arr[@]}"; do
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Quantidade de processos - $i Quantidade de processos da máquina $i está acima do esperado."
 					
 				done
-				php $CAMINHO_MONITOR/envio.php $n
+				php /var/www/cksrv-new/monitor/envio.php $n
 				mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 			if [ $RESULTADO -ge $CRITICAL ]; then
@@ -200,7 +201,7 @@ for i in "${arr[@]}"; do
 
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Quantidade de processos Zombie - $i Quantidade de processos Zombie da máquina $i está acima do esperado."
 				done
-				php $CAMINHO_MONITOR/envio.php $n
+				php /var/www/cksrv-new/monitor/envio.php $n
 				mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 			if [ $RESULTADO -ge $CRITICAL ]; then
@@ -213,7 +214,7 @@ for i in "${arr[@]}"; do
 		# # # Caso o tipo do serviço for espaço em disco # # #
 		if [ $TIPO_SERVICO -eq 6 ]; then
 			# Verifica se o resultado esta dentro do esperado
-			if [ $RESULTADO -ge $WARNING ]; then
+			if [ $RESULTADO -le $WARNING ]; then
 				### Envia alerta para todos os usuários###
 				# Busca na base uma lista de usuários ativos
 				usuarios=`mysql --login-path=cksrv -e "select id from usuarios where status_id=1" --database $SQL_DATABASE |sed 1d`
@@ -231,7 +232,7 @@ for i in "${arr[@]}"; do
 
 					/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send  55$DDD$CELULAR "Cksrv Alerta - Espaço em disco insuficiente - $i O Espaço disponível na partição $PARTICAO do servidor $i está abaixo do esperado."
 				done
-				php $CAMINHO_MONITOR/envio.php $n
+				php /var/www/cksrv-new/monitor/envio.php $n
 				mysql --login-path=cksrv -e "INSERT INTO  log_servicos SET servico_id=$TIPO_SERVICO,resultado=$RESULTADO,flg_critical=1,flg_warning=1,ip='$i',modified='$MODIFIED';" --database $SQL_DATABASE
 			fi
 			if [ $RESULTADO -ge $CRITICAL ]; then

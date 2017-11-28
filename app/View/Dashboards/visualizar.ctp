@@ -34,7 +34,7 @@ $(document).ready(function () {
             type: 'pie',
             name: 'Qtd',
             data: [  
-                 ['critico', <?php echo $critical;?> ],
+                 ['critical', <?php echo $critical;?> ],
                  ['warning', <?php echo $warning;?>  ] 
             ]
         }]
@@ -57,7 +57,7 @@ $(document).ready(function () {
             }
         },
         title: {
-            text: '<?php echo "Quantidade de alarmes Criticos por servidor do serviço: ".$nmeServicoRetorno?>'
+            text: '<?php echo "Quantidade de alarmes Critical por servidor do serviço: ".$nmeServicoRetorno?>'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.y:.2f}</b>'
@@ -247,7 +247,7 @@ $(function () {
            
                             //$qtdeBarra = $ta['0']['qtde'];
                             $dataCritical = $ta['LogServico']['modified'];
-                            $newDateCritical = date('Y-m-d', strtotime($dataCritical));
+                            $newDateCritical = date('Y-m', strtotime($dataCritical));
             ?>                
 
                 ['<?php echo $newDateCritical;?>'],
@@ -314,7 +314,7 @@ $(function () {
            
                             //$qtdeBarra = $ta['0']['qtde'];
                             $dataWarning = $ta['LogServico']['modified'];
-                            $newDateWarning = date('Y-m-d', strtotime($dataWarning));
+                            $newDateWarning = date('Y-m', strtotime($dataWarning));
             ?>                
 
                 ['<?php echo $newDateWarning;?>'],

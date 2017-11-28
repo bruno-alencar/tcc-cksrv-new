@@ -78,7 +78,7 @@ for i in "${arr[@]}"; do
 	fi
 
 	if [ $TIPO_SERVICO_ID -eq 6 ]; then
-		MENSAGEM='Particao: '$PARTICAO' - '$RESULTADO'MB'
+		MENSAGEM='Particao: '$PARTICAO' - '$RESULTADO'GB'
 		echo $MENSAGEM
 		/var/www/yowsup-master/yowsup-cli demos --config /var/www/yowsup-master/config --send $numero_telefone "$MENSAGEM"
 	fi
