@@ -51,11 +51,11 @@ foreach ($users as $user) {
 	$mail->Host = 'ssl://smtp.gmail.com'; // SMTP DO SEU EMAIL
 	$mail->Port = 465;
 	$mail->SMTPAuth = true;
-	$mail->Username = "cksrv2016@gmail.com"; // SEU EMAIL
-	$mail->Password = "cksrv@k0N"; // SUA SENHA
-	$mail->setFrom('cksrv2016@gmail.com', 'cksrv');
-	$mail->addReplyTo('cksrv2016@gmail.com', 'Reply');
-	$mail->addAddress($user['email'], 'allan');
+	$mail->Username = "user@gmail.com"; // SEU EMAIL
+	$mail->Password = "password"; // SUA SENHA
+	$mail->setFrom('user@gmail.com', 'cksrv');
+	$mail->addReplyTo('user@gmail.com', 'Reply');
+	$mail->addAddress($user['email'], 'name');
 	$mail->Subject = $subject;
 	$mail->Body = $body;
 
